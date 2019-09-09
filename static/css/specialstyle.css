@@ -1,0 +1,55 @@
+
+.city-intro{
+
+/*    background-color:yellow ;
+*/    margin: 1.5%;
+    width:80%;
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+.cc{
+    background-color:white;
+    margin: 4%;
+    width:33.3%;
+    text-align:center;
+    display: block;
+    
+}
+.p{
+    width:Xpx;
+}
+.text {
+  text-align:center;
+  width: 100%;
+  height: auto;
+    position:relative;
+    font-size: 14px;
+    margin: 10px 0 10px 0;
+    font-family: 微软雅黑；
+
+
+}
+
+.overlay {
+    display: none;
+    z-index:9999;
+      width: 70px;
+
+
+  
+}
+
+.text:hover .overlay {
+    display:block;
+    position:absolute;
+    top:15px;
+    left:-30px;
+    width:100px;
+    padding:10px;
+   
+}
+
+
+ 
