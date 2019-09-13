@@ -15,7 +15,9 @@ div,li,ul {
 }
 img {
 	vertical-align:top;
-	border:0
+	border:0;
+	width:100%;
+	height:auto;
 }
 li,ul {
 	list-style:none;

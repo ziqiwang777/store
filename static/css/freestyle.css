@@ -46,11 +46,22 @@
 	margin-right: 8px;
 }
 /*header*/
+
+
 .container{
 	width: 100%;
-	position: relative;
+	/* position: relative; */
+	position: fixed;
+	background: white;
+	z-index: 1000;
 	overflow: hidden;
 }
+/* .container.navbar-scrolled{
+	-webkit-box-shadow:0 .5rem 1rem rgba(0,0,0,.15);
+	box-shadow:0 .5rem 1rem rgba(0,0,0,.15);
+	background-color:#fff
+
+} */
 .header{
 	width: 1200px;
 	margin: 0 auto;
@@ -688,7 +699,14 @@
 	margin-top:0px;
 	margin-bottom:5px;
 }
-/*关于康软*/
+
+
+
+
+
+
+
+
 .abouts_con,
 .aboutcon{
 	display: block;

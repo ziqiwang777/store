@@ -6,8 +6,8 @@
     width:80%;
     display: flex;
     flex-direction: row;
-    
-    
+
+
 }
 .cc{
     background-color:white;
@@ -15,7 +15,7 @@
     width:33.3%;
     text-align:center;
     display: block;
-    
+
 }
 .p{
     width:Xpx;
@@ -38,7 +38,7 @@
       width: 70px;
 
 
-  
+
 }
 
 .text:hover .overlay {
@@ -48,8 +48,35 @@
     left:-30px;
     width:100px;
     padding:10px;
-   
+
 }
 
+.container{
+	width: 100%;
+	/* position: relative; */
+	position: fixed;
+	background: white;
+	z-index: 1000;
+	overflow: hidden;
+}
 
- 
+.container.navbar-scrolled{
+	-webkit-box-shadow:0 .5rem 1rem rgba(0,0,0,.15);
+	box-shadow:0 .5rem 1rem rgba(0,0,0,.15);
+	background-color:#fff
+
+}
+
+/* #container.navbar-scrolled .navbar-brand{color:#212529}
+#container.navbar-scrolled .navbar-brand:hover{color:#f4623a}
+#container.navbar-scrolled .navbar-nav .nav-item .nav-link{color:#212529}
+#container.navbar-scrolled .navbar-nav .nav-item .nav-link:hover{color:#f4623a}}
+ */
+
+
+
+.animated {
+    animation-name: fadeInUp;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}

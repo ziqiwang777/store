@@ -6,32 +6,42 @@
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>首页</title>
+		<title>宏辉胶丸</title>
 		<link rel="stylesheet" href="/static/css/default.css" />
 		<!-- <link rel="stylesheet" href="/static/css/swiper.min.css" /> -->
 		<link rel="stylesheet" href="/static/css/freestyle.css" />
 		<!-- <link rel="stylesheet" href="/static/css/new.css" /> -->
 		<link rel="stylesheet" type="text/css" href="/static/css/style_gundong.css" />
 		<link rel="stylesheet" href="/static/css/b_style.css" />
-		
 		<!-- <script type="text/javascript" src="/static/js/jquery-1.4.2.min.js"></script> -->
+		<link rel="stylesheet" type="text/css" href="/static/css/specialstyle.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/Animate.css">
+
+		<script src="ScrollWatch.js"></script>
 		<script type="text/javascript" src="/static/js/jquery-1.3.1.js"></script>
 		<script type="text/javascript" src="/static/js/jQuery.js"></script>
 		<script type="text/javascript" src="/static/js/jquery.SuperSlide.2.1.1.js" ></script>
 		<script type="text/javascript" src="/static/js/style.js"></script>
 		<script src="/static/js/slider.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		var sw = new ScrollWatch({
+			onElementInView: function(data) {
+				console.log(data.el, '...is now in view');
+			}
+			});
+		</script>
 		<style>
 			.container_img {
 			position: relative;
 			/* width: 50%; */
 		  }
-		  
+
 		  .image {
 			display: block;
 			width: 100%;
 			height: auto;
 		  }
-		  
+
 		  .overlay {
 			position: absolute;
 			top: 0;
@@ -44,11 +54,11 @@
 			transition: .5s ease;
 			background-color: #008CBA;
 		  }
-		  
+
 		  .container:hover .overlay {
 			opacity: 1;
 		  }
-		  
+
 		  .text {
 			color: white;
 			font-size: 20px;
@@ -59,14 +69,16 @@
 			-ms-transform: translate(-50%, -50%);
 		  }
 		</style>
-		
+
 	</head>
 	<body>
-		<div class="container">
+		<div style="position:relative">
+
+		<div class="container navbar-scrolled">
 			<!--top-->
 			<div class="topWrap clearfix">
 				<div class="top">
-					<p>欢迎访问宏辉胶丸官方网站！</p>
+					<p>欢迎访问浙江宏辉胶丸有限公司官方网站！</p>
 					<div class="top_R">
 						<a href="#"><img src="/static/img/top_tell.png">0575-86176888</a><span>|</span>
 						<a href="#"><img src="/static/img/top_mell.png">honghui158@163.com</a>
@@ -87,6 +99,7 @@
 					</ul>
 					<a href="javascript:;" class="menu"></a>
 				</div>
+
 				<div id="Nav">
 					<ul>
 						<li><a href="/index">首页 </a></li>
@@ -97,6 +110,10 @@
 						<li><a href="/contact_US">联系我们</a></li>
 					</ul>
 				</div>
+			</div>
+		</div>
+
+
 			<!--banner-->
 			<div class="banner">
 				<div id="slideBox" class="slideBox slideBox_ban">
@@ -122,7 +139,7 @@
 
 									<a href="product_introduction.html">
 										<input value="宏辉产品" type="button" class="button" />
-									</a>									
+									</a>
 								</div>
 
 							</li>
@@ -130,12 +147,12 @@
 								<img src="/static/temp/back3.png" />
 								<div class="wz">
 									<h2>宏辉胶丸</h2>
-									<p>质量是公司能够永续经营的根本</p>
+									<p>诚信是通向你与我的基石</p>
 									<img src="/static/img/banner_line.png" class="img">
 
 									<a href="product_introduction.html">
 										<input value="宏辉产品" type="button" class="button" />
-									</a>									
+									</a>
 								</div>
 
 							</li>
@@ -159,32 +176,32 @@
 								<div class="text">
 									胶囊1
 								</div>
-							</div>						
-						</div>		
+							</div>
+						</div>
 						<div class="container_img">
 							<img src="/static/img/2.png" data-url="product_detail2" class="image">
 							<div class="overlay">
 								<div class="text">
 									胶囊2
 								</div>
-							</div>						
-						</div>		
+							</div>
+						</div>
 						<div class="container_img">
 							<img src="/static/img/3.png" data-url="product_detail3" class="image">
 							<div class="overlay">
 								<div class="text">
 									胶囊3
 								</div>
-							</div>						
-						</div>		
+							</div>
+						</div>
 						<div class="container_img">
 							<img src="/static/img/4.png" data-url="product_detail4" class="image">
 							<div class="overlay">
 								<div class="text">
 									胶囊4
 								</div>
-							</div>						
-						</div>		
+							</div>
+						</div>
 				</div> -->
 				<div id="carousel">
 					<img src="/static/img/2.jpg" data-url="product_detail2">
@@ -193,28 +210,36 @@
 					<img src="/static/img/3.jpg" data-url="product_detail3">
 					<img src="/static/img/4.jpg" data-url="product_detail4">
 				</div>
-			
-			<div class="abouts">
-				<div class="title_T">
-					<h2>关于公司</h2>
-					<span>ABOUT KANGSOFT</span>
-				</div>
-				<div class="abouts_con clearfix">
-					<div class="aboutcon">
-						<a href="#" class="img"><img src="/static/img/index_gsjj.png"></a>
-						<div class="wz">
-<!-- 							<h2>GOOD SOFTWARE NEED<br />MORE TIMELY AND EFFICIENT SERVICE SUPPORT</h2>
- -->							<h3>质量是根，诚信是本</h3>
-							<p>浙江宏辉胶丸有限公司位于风景秀丽浙江东部 - 新昌县青山工业区内，104国道边，是依法取得药品生产许可证和注册证的生产企业， 是生产胃溶和肠溶药用空心胶囊的专业厂家。公司现有资产9800万元， 注册资金 1088.98万元,为“资信等级 AAA 级”企业，在绍兴市食品药品监督管理局空心胶囊生产企业等级评定中年年被评为AA 级企业（企业等级分为AA级，A级，B级，C级）。</p>
-							<p>
-此外，2007 年我公司“宏燕”牌空心胶囊荣获“浙江省名牌产品”称号；2009年宏燕商标被评为“浙江省著名商标”。公司占地面积 18000 平方米，建筑面积19500平方米。生产车间严格按照GMP规范设计安装有中央空调、 空气净化系统，化级别达 10 万级，完全符合药用空心胶囊的生产要求。
-							</p>
-						</div>
-					</div>
-					<a href="company_introduction.html" class="more_news">更多内容</a>
-				</div>
-
 			</div>
+
+
+
+
+			<section data-scroll-watch  id="wan_banner">
+				<div class="abouts">
+					<div class="title_T">
+						<h2>关于公司</h2>
+						<span>ABOUT HONGHUI</span>
+					</div>
+					<div class="abouts_con clearfix">
+						<div class="aboutcon">
+							<a href="#" class="img"><img src="/static/img/index_back_11.jpg"></a>
+							<div class="wz animated">
+	<!-- 							<h2>GOOD SOFTWARE NEED<br />MORE TIMELY AND EFFICIENT SERVICE SUPPORT</h2>
+	 -->							<h3>质量是根，诚信是本</h3>
+								<p>浙江宏辉胶丸有限公司成立于1995年，是专业生产明胶和植物空心胶囊的厂家。公司占地20000多平方米，建筑面积达30000平方米，拥有注册资金1088.98万人民币。总资产2亿6百万人民币。拥有在职员工200名，主要生产00#—4#明胶空心胶囊、肠溶空心胶囊、羟丙甲纤维素胶囊及普鲁兰多糖胶囊，年生产力达280亿粒。</p>
+								<p>
+	公司已经通过ISO9001:2015、ISO22000:2005:2005及清真认证。在绍兴食品药品监督管理局的胶囊生产企业里，公司每年都被评为AA级（企业等级分为AA、A、B、C）。从2007年起，公司“宏燕”牌空心胶囊荣获“浙江省名牌产品”称号；2009年起“宏燕”商标被评为“浙江省著名商标”，在本行业内我公司是浙江省第一家拥有此两项荣誉的企业。公司于2015年获得国家高新技术企业证书。							</p>
+							</div>
+						</div>
+						<a href="company_introduction.html" class="more_news">更多内容</a>
+					</div>
+
+				</div>
+			</section>
+
+
+
 			<!--footer-->
 			<div class="footerWrap">
 			<p>版权所有@ 2017 浙江宏辉胶丸有限公司<a href="#" title="17sucai">Reserved</a>浙ICP备06014512号</p>

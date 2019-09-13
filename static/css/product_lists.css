@@ -199,6 +199,10 @@ transition: all   0.3s linear; z-index: 11;  }
 	font-size: 15px;
 	line-height: 28px;
 }
+.pro_inner_right p1 {
+	font-size: 15px;
+	line-height: 28px;
+}
 .pro_inner_right .lists_btn {
 	margin-left: 20px;
 	float: right;
