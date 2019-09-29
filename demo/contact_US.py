@@ -3,6 +3,7 @@
 import datetime
 from django.shortcuts import render
 from django.views.decorators import csrf
+from django.http import HttpResponseRedirect
 
 from demo.models import Message
 def contact_US(request):  # index页面需要一开始就加载的内容写在这里
@@ -22,8 +23,13 @@ def contact_US(request):  # index页面需要一开始就加载的内容写在�
         message.message_c = message_c
         message.publish = publish
         message.save()
-        return render(request,"Response_Success.html")
+        return HttpResponseRedirect("/submitsuccess")
+
 
     if request.method == "GET":
 
+
         return render(request,"contact_US.html")
+
+def submitsuccess(request):
+    return render(request,"Response_Success.html")

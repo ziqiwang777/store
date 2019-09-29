@@ -1,7 +1,10 @@
 /*****product_lists*****/
 .lists {
-	margin-top: 25px;
-	margin-bottom: 20px;
+	margin-top: 3%;
+	margin-left: 1.5%;
+	margin-right: 1.5%;
+
+	margin-bottom: 5%;
 }
 .lists_box {
 	background: #fff;

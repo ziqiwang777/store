@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,14 +13,20 @@
 		<!-- <link rel="stylesheet" href="/static/css/swiper.min.css" /> -->
 		<!-- <link rel="stylesheet" href="/static/css/freestyle.css" />
 		<link rel="stylesheet" href="/static/css/b_style.css" /> -->
+        <link rel="stylesheet" href="/static/css/Animate.css" />
 		<link rel="stylesheet" href="/static/css/default.css" />
 		<link rel="stylesheet" href="/static/css/swiper.min.css" />
 		<link rel="stylesheet" href="/static/css/freestyle.css" />
 		<link rel="stylesheet" href="/static/css/b_style.css" />
+        <link rel="stylesheet" href="static/css/uikit.css" />
+        <link rel="stylesheet" href="static/css/specialstyle.css" />
+
+        <script src="//cdn.bootcss.com/uikit/2.25.0/js/uikit.js"></script>
 		<script type="text/javascript" src="/static/js/jQuery.js"></script>
 		<script type="text/javascript" src="/static/js/jquery.SuperSlide.2.1.1.js" ></script>
 		<script type="text/javascript" src="/static/js/swiper.min.js" ></script>
 		<script type="text/javascript" src="/static/js/style.js"></script>
+
 	</head>
 	<body>
 			<div class="topWrap clearfix">
@@ -58,7 +64,7 @@
 				</div>
 
 			<div class="banner">
-				<a href="#"><img src="/static/temp/company_banner.jpg"></a>
+				<a href="#"><img style="width:100%"src="/static/temp/company_banner1.png"></a>
 				<div class="case_bawz">
 					<!-- <h2>企业宗旨</h2>
 					<p>ing...</p> -->
@@ -68,44 +74,77 @@
 			<!--case_内容-->
 			<div class="case_introduction product_introduction">
 				<h2 class="tit_h">产品介绍
-					<hr class = "stick" style="max-width: 6rem;">
+					<hr class = "stick" style="max-width: 6rem; margin-bottom:20px">
 
 				</h2>
-				<ul>
-					<li>
-						<!-- <h3>胶囊1</h3> -->
-						<a href="product_detail1.html">
-							<img style="width:100%; height:100%;" src="/static/img/1.jpg">
+
+
+
+                <div class="uk-grid" style = "padding:5%; padding-bottom:4%;padding-top:2%">
+                    <div class="uk-width-large-1-4 uk-width-medium-1-2" >
+                        <a href="product_detail1.html">
+							<picture>
+
+								<source media="(min-width:960px)" srcset="/static/img/13.png">
+								<source media="(max-width:960px)" srcset="/static/img/11.png">
+
+								<img class="enlarge"  src="/static/img/13.png">
+
+							</picture>
+
 
 							<!-- <span>查看详情</span> -->
 						</a>
-					</li>
-					<li>
-						<!-- <h3>胶囊2</h3> -->
-						<a href="product_detail2.html">
-							<img style="width:100%; height:100%;" src="/static/img/2.jpg">
+                    </div>
+
+                    <div class="uk-width-large-1-4 uk-width-medium-1-2">
+                        <a href="product_detail2.html">
+							<picture>
+
+								<source media="(min-width:960px)" srcset="/static/img/23.png">
+								<source media="(max-width:960px)" srcset="/static/img/21.png">
+
+								<img class="enlarge"  src="/static/img/23.png">
+
+							</picture>
 
 							<!-- <span>查看详情</span> -->
 						</a>
+                    </div>
 
-					</li>
+                    <div class="uk-width-large-1-4 uk-width-medium-1-2">
+                        <a href="product_detail3.html">
+							<picture>
 
-					<li>
-						<!-- <h3>胶囊3</h3> -->
-						<a href="product_detail3.html">
-							<img style="width:100%; height:100%;" src="/static/img/3.jpg">
+								<source media="(min-width:960px)" srcset="/static/img/33.png">
+								<source media="(max-width:960px)" srcset="/static/img/21.png">
+
+								<img class="enlarge"  src="/static/img/33.png">
+
+							</picture>
+
 
 							<!-- <span>查看详情</span> -->
 						</a>
-					</li>
-					<li>
-						<!-- <h3>胶囊4</h3> -->
+                    </div>
+
+                    <div class="uk-width-large-1-4 uk-width-medium-1-2">
+                        <!-- <h3>胶囊4</h3> -->
 						<a href="product_detail4.html">
-							<img style="width:100%; height:100%;" src="/static/img/4.jpg">
+							<picture>
+
+								<source media="(min-width:960px)" srcset="/static/img/43.png">
+								<source media="(max-width:960px)" srcset="/static/img/41.png">
+
+								<img class="enlarge"  src="/static/img/43.png">
+
+							</picture>
 							<!-- <span>查看详情</span> -->
 						</a>
-					</li>
-				</ul>
+                    </div>
+
+                </div>
+
 			</div>
 
 			<!--footer-->

@@ -13,8 +13,22 @@
     background-color:white;
     margin: 1.5%;
     text-align:center;
-    
+
 }
 p{
     width:Xpx;
+}
+
+.wzxCenter {
+    text-align: center;
+}
+.text {
+  text-align:center;
+  width: 100%;
+  margin-left:20%;
+  height: auto;
+    font-size: 18px;
+    font-family: 微软雅黑；
+
+
 }
