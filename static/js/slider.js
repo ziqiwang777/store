@@ -1,196 +1,540 @@
-;(function($, window, document, undefined) {
-    var Carousel = function(elem, options) {
-        this.defaults = {
-            curDisplay: 0,
-            autoPlay: false,
-            interval: 3000
-        };
-        this.opts = $.extend({}, this.defaults, options);
+/*! UIkit 2.25.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
+(function(addon) {
 
-        var self = this;
-        this.$carousel = elem;
-        this.$aImg = this.$carousel.find('img');
+    var component;
 
-        this.imgLen = this.$aImg.length;
-        this.curDisplay = this.opts.curDisplay;
-        this.autoPlay = this.opts.autoPlay;
-        this.viewWidth = $(window).width() / 2;
-        this.b_switch = true;
-        this.iNow = this.opts.curDisplay;
-        this.timer = null;
-        this.interval = this.opts.interval;
-        // 生成小点点
-        var htmlNav = "<ul>";
-        for (var i = 0; i < this.imgLen; i++) {
-            if (this.curDisplay == i) {
-                htmlNav += "<li class=on><a>" + i + "</a></li>";
+    if (window.UIkit) {
+        component = addon(UIkit);
+    }
+
+    if (typeof define == "function" && define.amd) {
+        define("uikit-slider", ["uikit"], function(){
+            return component || addon(UIkit);
+        });
+    }
+
+})(function(UI){
+
+    "use strict";
+
+    var dragging, delayIdle, anchor, dragged, store = {};
+
+    UI.component('slider', {
+
+        defaults: {
+            center           : false,
+            threshold        : 10,
+            infinite         : true,
+            autoplay         : false,
+            autoplayInterval : 7000,
+            pauseOnHover     : true,
+            activecls        : 'uk-active'
+        },
+
+        boot:  function() {
+
+            // init code
+            UI.ready(function(context) {
+
+                setTimeout(function(){
+
+                    UI.$('[data-uk-slider]', context).each(function(){
+
+                        var ele = UI.$(this);
+
+                        if (!ele.data('slider')) {
+                            UI.slider(ele, UI.Utils.options(ele.attr('data-uk-slider')));
+                        }
+                    });
+
+                }, 0);
+            });
+        },
+
+        init: function() {
+
+            var $this = this;
+
+            this.container = this.element.find('.uk-slider');
+            this.focus     = 0;
+
+            UI.$win.on('resize load', UI.Utils.debounce(function() {
+                $this.resize(true);
+            }, 100));
+
+            this.on('click.uk.slider', '[data-uk-slider-item]', function(e) {
+
+                e.preventDefault();
+
+                var item = UI.$(this).attr('data-uk-slider-item');
+
+                if ($this.focus == item) return;
+
+                // stop autoplay
+                $this.stop();
+
+                switch(item) {
+                    case 'next':
+                    case 'previous':
+                        $this[item=='next' ? 'next':'previous']();
+                        break;
+                    default:
+                        $this.updateFocus(parseInt(item, 10));
+                }
+            });
+
+            this.container.on({
+
+                'touchstart mousedown': function(evt) {
+
+                    if (evt.originalEvent && evt.originalEvent.touches) {
+                        evt = evt.originalEvent.touches[0];
+                    }
+
+                    // ignore right click button
+                    if (evt.button && evt.button==2 || !$this.active) {
+                        return;
+                    }
+
+                    // stop autoplay
+                    $this.stop();
+
+                    anchor  = UI.$(evt.target).is('a') ? UI.$(evt.target) : UI.$(evt.target).parents('a:first');
+                    dragged = false;
+
+                    if (anchor.length) {
+
+                        anchor.one('click', function(e){
+                            if (dragged) e.preventDefault();
+                        });
+                    }
+
+                    delayIdle = function(e) {
+
+                        dragged  = true;
+                        dragging = $this;
+                        store    = {
+                            touchx : parseInt(e.pageX, 10),
+                            dir    : 1,
+                            focus  : $this.focus,
+                            base   : $this.options.center ? 'center':'area'
+                        };
+
+                        if (e.originalEvent && e.originalEvent.touches) {
+                            e = e.originalEvent.touches[0];
+                        }
+
+                        dragging.element.data({
+                            'pointer-start': {x: parseInt(e.pageX, 10), y: parseInt(e.pageY, 10)},
+                            'pointer-pos-start': $this.pos
+                        });
+
+                        $this.container.addClass('uk-drag');
+
+                        delayIdle = false;
+                    };
+
+                    delayIdle.x         = parseInt(evt.pageX, 10);
+                    delayIdle.threshold = $this.options.threshold;
+
+                },
+
+                mouseenter: function() { if ($this.options.pauseOnHover) $this.hovering = true;  },
+                mouseleave: function() { $this.hovering = false; }
+            });
+
+            this.resize(true);
+
+            this.on('display.uk.check', function(){
+                if ($this.element.is(":visible")) {
+                    $this.resize(true);
+                }
+            });
+
+            // prevent dragging links + images
+            this.element.find('a,img').attr('draggable', 'false');
+
+            // Set autoplay
+            if (this.options.autoplay) {
+                this.start();
+            }
+
+        },
+
+        resize: function(focus) {
+
+            var $this = this, pos = 0, maxheight = 0, item, width, cwidth, size;
+
+            this.items = this.container.children().filter(':visible');
+            this.vp    = this.element[0].getBoundingClientRect().width;
+
+            this.container.css({'min-width': '', 'min-height': ''});
+
+            this.items.each(function(idx){
+
+                item      = UI.$(this);
+                size      = item.css({'left': '', 'width':''})[0].getBoundingClientRect();
+                width     = size.width;
+                cwidth    = item.width();
+                maxheight = Math.max(maxheight, size.height);
+
+                item.css({'left': pos, 'width':width}).data({'idx':idx, 'left': pos, 'width': width, 'cwidth':cwidth, 'area': (pos+width), 'center':(pos - ($this.vp/2 - cwidth/2))});
+
+                pos += width;
+            });
+
+            this.container.css({'min-width': pos, 'min-height': maxheight});
+
+            if (this.options.infinite && (pos <= (2*this.vp) || this.items.length < 5) && !this.itemsResized) {
+
+                // fill with cloned items
+                this.container.children().each(function(idx){
+                   $this.container.append($this.items.eq(idx).clone(true).attr('id', ''));
+                }).each(function(idx){
+                   $this.container.append($this.items.eq(idx).clone(true).attr('id', ''));
+                });
+
+                this.itemsResized = true;
+
+                return this.resize();
+            }
+
+            this.cw     = pos;
+            this.pos    = 0;
+            this.active = pos >= this.vp;
+
+            this.container.css({
+                '-ms-transform': '',
+                '-webkit-transform': '',
+                'transform': ''
+            });
+
+            if (focus) this.updateFocus(this.focus);
+        },
+
+        updatePos: function(pos) {
+            this.pos = pos;
+            this.container.css({
+                '-ms-transform': 'translateX('+pos+'px)',
+                '-webkit-transform': 'translateX('+pos+'px)',
+                'transform': 'translateX('+pos+'px)'
+            });
+        },
+
+        updateFocus: function(idx, dir) {
+
+            if (!this.active) {
+                return;
+            }
+
+            dir = dir || (idx > this.focus ? 1:-1);
+
+            var item = this.items.eq(idx), area, i;
+
+            if (this.options.infinite) {
+                this.infinite(idx, dir);
+            }
+
+            if (this.options.center) {
+
+                this.updatePos(item.data('center')*-1);
+
+                this.items.filter('.'+this.options.activecls).removeClass(this.options.activecls);
+                item.addClass(this.options.activecls);
+
             } else {
-                htmlNav += "<li><a>" + i + "</a></li>";
+
+                if (this.options.infinite) {
+
+                    this.updatePos(item.data('left')*-1);
+
+                } else {
+
+                    area = 0;
+
+                    for (i=idx;i<this.items.length;i++) {
+                        area += this.items.eq(i).data('width');
+                    }
+
+
+                    if (area > this.vp) {
+
+                        this.updatePos(item.data('left')*-1);
+
+                    } else {
+
+                        if (dir == 1) {
+
+                            area = 0;
+
+                            for (i=this.items.length-1;i>=0;i--) {
+
+                                area += this.items.eq(i).data('width');
+
+                                if (area == this.vp) {
+                                    idx = i;
+                                    break;
+                                }
+
+                                if (area > this.vp) {
+                                    idx = (i < this.items.length-1) ? i+1 : i;
+                                    break;
+                                }
+                            }
+
+                            if (area > this.vp) {
+                                this.updatePos((this.container.width() - this.vp) * -1);
+                            } else {
+                                this.updatePos(this.items.eq(idx).data('left')*-1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            // mark elements
+            var left = this.items.eq(idx).data('left');
+
+            this.items.removeClass('uk-slide-before uk-slide-after').each(function(i){
+                if (i!==idx) {
+                    UI.$(this).addClass(UI.$(this).data('left') < left ? 'uk-slide-before':'uk-slide-after');
+                }
+            });
+
+            this.focus = idx;
+
+            this.trigger('focusitem.uk.slider', [idx,this.items.eq(idx),this]);
+        },
+
+        next: function() {
+
+            var focus = this.items[this.focus + 1] ? (this.focus + 1) : (this.options.infinite ? 0:this.focus);
+
+            this.updateFocus(focus, 1);
+        },
+
+        previous: function() {
+
+            var focus = this.items[this.focus - 1] ? (this.focus - 1) : (this.options.infinite ? (this.items[this.focus - 1] ? this.items-1:this.items.length-1):this.focus);
+
+            this.updateFocus(focus, -1);
+        },
+
+        start: function() {
+
+            this.stop();
+
+            var $this = this;
+
+            this.interval = setInterval(function() {
+                if (!$this.hovering) $this.next();
+            }, this.options.autoplayInterval);
+
+        },
+
+        stop: function() {
+            if (this.interval) clearInterval(this.interval);
+        },
+
+        infinite: function(baseidx, direction) {
+
+            var $this = this, item = this.items.eq(baseidx), i, z = baseidx, move = [], area = 0;
+
+            if (direction == 1) {
+
+
+                for (i=0;i<this.items.length;i++) {
+
+                    if (z != baseidx) {
+                        area += this.items.eq(z).data('width');
+                        move.push(this.items.eq(z));
+                    }
+
+                    if (area > this.vp) {
+                        break;
+                    }
+
+                    z = z+1 == this.items.length ? 0:z+1;
+                }
+
+                if (move.length) {
+
+                    move.forEach(function(itm){
+
+                        var left = item.data('area');
+
+                        itm.css({'left': left}).data({
+                            'left'  : left,
+                            'area'  : (left+itm.data('width')),
+                            'center': (left - ($this.vp/2 - itm.data('cwidth')/2))
+                        });
+
+                        item = itm;
+                    });
+                }
+
+
+            } else {
+
+                for (i=this.items.length-1;i >-1 ;i--) {
+
+                    area += this.items.eq(z).data('width');
+
+                    if (z != baseidx) {
+                        move.push(this.items.eq(z));
+                    }
+
+                    if (area > this.vp) {
+                        break;
+                    }
+
+                    z = z-1 == -1 ? this.items.length-1:z-1;
+                }
+
+                if (move.length) {
+
+                    move.forEach(function(itm){
+
+                        var left = item.data('left') - itm.data('width');
+
+                        itm.css({'left': left}).data({
+                            'left'  : left,
+                            'area'  : (left+itm.data('width')),
+                            'center': (left - ($this.vp/2 - itm.data('cwidth')/2))
+                        });
+
+                        item = itm;
+                    });
+                }
             }
         }
-        htmlNav += "</ul>";
-        this.$carousel.parent().append('<div id=bannerNav>' + htmlNav + '</div>');
-        this.$aNav = this.$carousel.siblings('#bannerNav').find('ul li');
-    };
+    });
 
-    var outerWidth = parseInt(document.body.offsetWidth);
-    var middleWidth = 1920;
-    var _height = outerWidth >= middleWidth ? 380 : 300;
-    var _slideHeight = outerWidth >= middleWidth ? 330 : 260;
+    // handle dragging
+    UI.$doc.on('mousemove.uk.slider touchmove.uk.slider', function(e) {
 
-    Carousel.prototype = {
-        play: function() {
-            if (this.autoPlay) {
-                if (this.iNow === this.imgLen - 1) {
-                    this.iNow = 0;
-                } else {
-                    this.iNow++;
-                }
+        if (e.originalEvent && e.originalEvent.touches) {
+            e = e.originalEvent.touches[0];
+        }
 
-                this.movingNext(this.iNow);
+        if (delayIdle && Math.abs(e.pageX - delayIdle.x) > delayIdle.threshold) {
+
+            if (!window.getSelection().toString()) {
+                delayIdle(e);
+            } else {
+                dragging = delayIdle = false;
             }
-        },
+        }
 
-        movingPrev: function(index) {
-            this.curDisplay = index;
+        if (!dragging) {
+            return;
+        }
 
-            this.initalCarousel();
-        },
+        var x, xDiff, pos, dir, focus, item, next, diff, i, z, itm;
 
-        movingNext: function(index) {
-            this.curDisplay = index;
+        if (e.clientX || e.clientY) {
+            x = e.clientX;
+        } else if (e.pageX || e.pageY) {
+            x = e.pageX - document.body.scrollLeft - document.documentElement.scrollLeft;
+        }
 
-            this.initalCarousel();
-        },
+        focus = store.focus;
+        xDiff = x - dragging.element.data('pointer-start').x;
+        pos   = dragging.element.data('pointer-pos-start') + xDiff;
+        dir   = x > dragging.element.data('pointer-start').x ? -1:1;
+        item  = dragging.items.eq(store.focus);
 
-        initalCarousel: function() {
-            var self = this;
-            var half_imgLen = Math.floor(this.imgLen / 2);
-            var leftNum, rightNum;
+        if (dir == 1) {
 
-            var k = 0;
-            for (var i = 0; i < half_imgLen; i++) {
-                leftNum = this.curDisplay - i - 1;
-                if (k == 0) {
-                    this.$aImg.eq(leftNum).css({
-                        transform: 'translateX(' + (-535 * (i + 1)) + 'px) translateZ(-120px)',
-                        width:"auto",
-                    }).animate({
-                        height: _slideHeight + 'px',
-                        marginTop: -_slideHeight / 2 + 'px',
-                        opacity: '0.6'
-                    }, 500);
-                    this.$aImg.eq(leftNum).attr('onclick', null);
+            diff = item.data('left') + Math.abs(xDiff);
 
-                    rightNum = this.curDisplay + i + 1;
-                    if (rightNum > this.imgLen - 1) rightNum -= this.imgLen;
-                    this.$aImg.eq(rightNum).css({
-                        transform: 'translateX(' + (600 * (i + 1)) + 'px) translateZ(-120px) ',
-                        width:"auto"
-                    }).animate({
-                        height: _slideHeight + 'px',
-                        marginTop: -_slideHeight / 2 + 'px',
-                        opacity: '0.6'
-                    }, 500);
-                    this.$aImg.eq(rightNum).attr('onclick', null);
-                    k++;
-                } else {
-                    this.$aImg.eq(leftNum).css({
-                        transform: 'translateX(0px) translateZ(-1000px) ',
-                        zIndex:-1
-                    });
+            for (i=0,z=store.focus;i<dragging.items.length;i++) {
 
-                    rightNum = this.curDisplay + i + 1;
-                    if (rightNum > this.imgLen - 1) rightNum -= this.imgLen;
-                    this.$aImg.eq(rightNum).css({
-                        transform: 'translateX(0px) translateZ(-1000px) ',
-                        zIndex:-1
-                    });
+                itm = dragging.items.eq(z);
+
+                if (z != store.focus && itm.data('left') < diff && itm.data('area') > diff) {
+                    focus = z;
+                    break;
                 }
-                this.$aImg.removeClass('on');
-                this.$aNav.removeClass('on');
+
+                z = z+1 == dragging.items.length ? 0:z+1;
             }
 
-            var _href = 'location.href=' + "'" + this.$aImg.eq(this.curDisplay).attr('data-url') + "'";
-            this.$aImg.eq(this.curDisplay).css({
-                transform: 'translateZ(0px)',
-                zIndex:99999
-            }).animate({
-                height: _height + 'px',
-                marginTop: -_height / 2 + 'px',
-                opacity: '1',
-            }, 500).addClass('on').attr('onclick', _href);
-            this.$aNav.eq(this.curDisplay).addClass('on');
+        } else {
 
-            this.$carousel.on('webkitTransitionEnd', function() {
-                self.b_switch = true;
-            });
-        },
+            diff = item.data('left') - Math.abs(xDiff);
 
-        inital: function() {
-            var self = this;
+            for (i=0,z=store.focus;i<dragging.items.length;i++) {
 
-            this.initalCarousel();
+                itm = dragging.items.eq(z);
 
-            this.$aImg.on('click', function(ev) {
-                if (self.b_switch && !$(this).hasClass('on')) {
-                    self.iNow = $(this).index();
-                    self.b_switch = false;
-
-                    var direction = self.viewWidth < ev.clientX ? 'next' : 'prev';
-                    var index = $(this).index();
-
-                    if (direction === 'next') {
-                        self.movingNext(index);
-                    } else {
-                        self.movingPrev(index);
-                    }
+                if (z != store.focus && itm.data('area') <= item.data('left') && itm.data('center') < diff) {
+                    focus = z;
+                    break;
                 }
-            }).hover(function() {
-                clearInterval(self.timer);
-            }, function() {
-                self.timer = setInterval(function() {
-                    self.play();
-                }, self.interval);
-            });
-            this.$aNav.on('click', function(ev) {
-                if (self.b_switch && !$(this).hasClass('on')) {
-                    self.iNow = $(this).index();
-                    self.b_switch = false;
 
-                    var direction = self.viewWidth < ev.clientX ? 'next' : 'prev';
-                    var index = $(this).index();
+                z = z-1 == -1 ? dragging.items.length-1:z-1;
+            }
+        }
 
-                    if (direction === 'next') {
-                        self.movingNext(index);
-                    } else {
-                        self.movingPrev(index);
+        if (dragging.options.infinite && focus!=store._focus) {
+            dragging.infinite(focus, dir);
+        }
+
+        dragging.updatePos(pos);
+
+        store.dir     = dir;
+        store._focus  = focus;
+        store.touchx  = parseInt(e.pageX, 10);
+        store.diff    = diff;
+    });
+
+    UI.$doc.on('mouseup.uk.slider touchend.uk.slider', function(e) {
+
+        if (dragging) {
+
+            dragging.container.removeClass('uk-drag');
+
+            // TODO is this needed?
+            dragging.items.eq(store.focus);
+
+            var itm, focus = false, i, z;
+
+            if (store.dir == 1) {
+
+                for (i=0,z=store.focus;i<dragging.items.length;i++) {
+
+                    itm = dragging.items.eq(z);
+
+                    if (z != store.focus && itm.data('left') > store.diff) {
+                        focus = z;
+                        break;
                     }
+
+                    z = z+1 == dragging.items.length ? 0:z+1;
                 }
-            }).hover(function() {
-                clearInterval(self.timer);
-            }, function() {
-                self.timer = setInterval(function() {
-                    self.play();
-                }, self.interval);
-            });
 
-            this.timer = setInterval(function() {
-                self.play();
-            }, this.interval);
+            } else {
 
-            this.$carousel.on('selectstart', function() {
-                return false;
-            });
-        },
+                for (i=0,z=store.focus;i<dragging.items.length;i++) {
 
-        constructor: Carousel
-    };
+                    itm = dragging.items.eq(z);
 
-    $.fn.carousel = function(options) {
-        var carousel = new Carousel(this, options);
+                    if (z != store.focus && itm.data('left') < store.diff) {
+                        focus = z;
+                        break;
+                    }
 
-        return carousel.inital();
-    };
+                    z = z-1 == -1 ? dragging.items.length-1:z-1;
+                }
+            }
 
-})(jQuery, window, document, undefined);
+            dragging.updateFocus(focus!==false ? focus:store._focus);
+
+        }
+
+        dragging = delayIdle = false;
+    });
+
+    return UI.slider;
+});

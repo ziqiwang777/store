@@ -744,8 +744,17 @@
 	margin: 0 auto;
 	overflow: hidden;
 	background: #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
-.footerWrap p{
+
+.footer__copyright {
+	padding: 3px;
+}
+
+.footerWrap span{
 	font-size: 12px;
 	color: #fff;
 	padding:1% 0;
