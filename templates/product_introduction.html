@@ -5,27 +5,28 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>宏辉胶丸</title>
-		<!-- <link rel="stylesheet" href="http://www.hgcapsule.com/css/font-awesome.css"/> -->
-		<!-- <link rel="stylesheet" href="/static/css/bootstrap.css" /> -->
-		<!-- <link rel="stylesheet" href="/static/css/css.css" /> -->
-		<!-- <link rel="stylesheet" href="/static/css/default.css" /> -->
-		<!-- <link rel="stylesheet" href="/static/css/swiper.min.css" /> -->
-		<!-- <link rel="stylesheet" href="/static/css/freestyle.css" />
-		<link rel="stylesheet" href="/static/css/b_style.css" /> -->
-        <link rel="stylesheet" href="/static/css/Animate.css" />
 		<link rel="stylesheet" href="/static/css/default.css" />
-		<link rel="stylesheet" href="/static/css/swiper.min.css" />
 		<link rel="stylesheet" href="/static/css/freestyle.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/style_gundong.css" />
 		<link rel="stylesheet" href="/static/css/b_style.css" />
-        <link rel="stylesheet" href="static/css/uikit.css" />
-        <link rel="stylesheet" href="static/css/specialstyle.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/specialstyle.css">
+		<link rel="stylesheet" href="static/css/uikit.css" />
+		<link rel="stylesheet" href="static/css/otherstyle.css" />
+        <link rel="stylesheet" href="static/css/slider.css" />
+        <link rel="stylesheet" href="static/css/slideshow.css" />
+        <link rel="stylesheet" href="static/css/dotnav.css" />
+        <link rel="stylesheet" href="static/css/slidenav.css" />
 
-        <script src="//cdn.bootcss.com/uikit/2.25.0/js/uikit.js"></script>
+		<script type="text/javascript" src="/static/js/jquery-1.3.1.js"></script>
 		<script type="text/javascript" src="/static/js/jQuery.js"></script>
 		<script type="text/javascript" src="/static/js/jquery.SuperSlide.2.1.1.js" ></script>
-		<script type="text/javascript" src="/static/js/swiper.min.js" ></script>
 		<script type="text/javascript" src="/static/js/style.js"></script>
+
+		<script src="/static/js/slider_desktop.js" type="text/javascript" charset="utf-8"></script>
+		<script src="//cdn.bootcss.com/uikit/2.25.0/js/uikit.js"></script>
+
 
 	</head>
 	<body>
@@ -40,28 +41,76 @@
 				</div>
 				<!--header-->
 				<div id="showRight"></div>
+
 				<div class="header">
-					<a href="index.html" class="logo"><img src="/static/img/logo.png"></a>
-					<ul>
-						<li><a href="/index">首页 </a></li>
-						<li><a href="/company_introduction">公司介绍</a></li>
-						<li><a href="/product_introduction">产品介绍</a></li>
-						<li><a href="/quality">品质监管</a></li>
-						<li><a href="/production_process">生产流程</a></li>
-						<li><a href="/contact_US">联系我们</a></li>
-					</ul>
-					<a href="javascript:;" class="menu"></a>
-				</div>
-				<div id="Nav">
-					<ul>
-						<li><a href="/index">首页 </a></li>
-						<li><a href="/company_introduction">公司介绍</a></li>
-						<li><a href="/product_introduction">产品介绍</a></li>
-						<li><a href="/quality">品质监管</a></li>
-						<li><a href="/production_process">生产流程</a></li>
-						<li><a href="/contact_US">联系我们</a></li>
-					</ul>
-				</div>
+    				<a href="index.html" class="logo"><img src="/static/img/logo.png"></a>
+    				<ul>
+    					<li><a href="/index">首页 </a></li>
+    					<li><a href="/company_introduction">公司介绍</a></li>
+
+						<li>
+							<div class="drop_menu" style="width:107px;height:60px">
+							    <div class="hover-btn"><a href="/product_introduction">产品服务</a></div>
+							    <div class="drop-content">
+							        <a href="#honghuiproducts" data-uk-smooth-scroll>胶囊产品</a>
+							        <a href="#cap_print"  data-uk-smooth-scroll>胶囊印刷</a>
+							        <a href="#saveandtran" data-uk-smooth-scroll>保存与使用</a>
+							    </div>
+							</div>
+						</li>
+
+    					<li>
+    						<div class="drop_menu" style="width:107px;height:60px">
+    							<div class="hover-btn"><a href="/product_introduction">生产与监管</a></div>
+    							<div class="drop-content">
+    								<a href="/quality">品质监管</a>
+    								<a href="/production_process">生产流程</a>
+    							</div>
+    						</div>
+    					</li>
+
+                        <li class = "phone_nav"><a href="/quality">品质监管</a></li>
+                        <li class = "phone_nav"><a href="/production_process">生产流程</a></li>
+
+
+
+
+    					<li><a href="/contact_US">联系我们</a></li>
+                        <li>
+    						<div class="drop_menu" style="width:107px;height:60px">
+    							<div class="hover-btn"><a href="#">LANGUAGE</a></div>
+    							<div class="drop-content">
+    								<a href="/eng_page">ENGLISH</a>
+    								<a href="/index">中文</a>
+    							</div>
+    						</div>
+
+    					</li>
+
+
+
+
+    					</li>
+    				</ul>
+    				<a href="javascript:;" class="menu"></a>
+    			</div>
+    			<div id="Nav">
+    				<ul>
+    					<li><a href="/index">首页 </a></li>
+    					<li><a href="/company_introduction">公司介绍</a></li>
+    					<li><a href="/product_introduction">产品服务</a></li>
+    					<li class="desk_nav"><a href="/production_process">生产与监管</a></li>
+
+                        <li class = "phone_nav"><a href="/quality">品质监管</a></li>
+                        <li class = "phone_nav"><a href="/production_process">生产流程</a></li>
+
+
+    					<li><a href="/contact_US">联系我们</a></li>
+    					<li><a href="/eng_page">ENGLISH</a></li>
+
+    				</ul>
+    			</div>
+
 
 			<div class="banner">
 				<a href="#"><img style="width:100%"src="/static/temp/company_banner1.jpg"></a>
@@ -72,11 +121,18 @@
 			</div>
 
 			<!--case_内容-->
-			<div class="case_introduction product_introduction">
-				<h2 class="tit_h">产品介绍
-					<hr class = "stick" style="max-width: 6rem; margin-bottom:20px">
-
-				</h2>
+			<div class="case_introduction product_introduction" id= "honghuiproducts">
+				<ul class="uk-subnav uk-subnav-line second_nav_product">
+					<a href="#honghuiproducts" data-uk-smooth-scroll ><div class="second_nav_title">胶囊产品</div></a>
+					<a href="#cap_print"  data-uk-smooth-scroll > <div class="second_nav_title">胶囊印刷</div></a>
+					<a href="#saveandtran" data-uk-smooth-scroll ><div class="second_nav_title">保存与使用</div></a>
+				</ul>
+				<div class="title_container" >
+					<div class="title_T" style="width:90%;">
+						<h2>产品介绍</h2>
+						<span>ABOUT PRODUCT</span>
+					</div>
+				</div>
 
 
 
@@ -143,10 +199,89 @@
 						</a>
                     </div>
 
+
+
                 </div>
 
 			</div>
+			<section id = "cap_print" style="background:#e0e1e1; height:auto;width:100%" data-uk-scrollspy="{cls:'uk-animation-fade', delay:600}">
+				<div class="title_T print_cap_phonetitle" style="width:90%;">
+					<h2>胶囊印刷</h2>
+					<span>Storage and Using of Capsules</span>
+				</div>
+				<div class="print_container">
+				    <div class="print_left">
+						<div class="tit_frame">
+							<img src="static/temp/print_tit.png" alt="">
+						</div>
+					</div>
 
+
+
+				    <div class="print_right">
+						<div class="print_cap_intro">
+							<p class="chinese">胶囊印字技术是采用先进的印字设备和卡乐康公司的油墨或获国家认证的药用油墨在胶囊表面进行印刷。根据客户要求可以提供轴环向、定向和双色印字。外表美观，字体和图案清晰可使您的产品形象更突出，增加产品竞争力，提供企业品牌效应。</p>
+
+							<p class="eng">
+								Capsule printing is the use of advanced printing equipment and Colorcon printing ink or awarded national certification in medicinal capsule surface printing ink. According to customers’ requirements, we can provide circumferential printing, axial printing, specified radial printing and double colour spots printing service, which makes your products’ appearance and font be more well-designed. Meanwhile, it also increases the competitiveness of your products and enhance brand effects.
+							</p>
+
+							<div class="print_cap_frame">
+								<a href="static/temp/print_cap.png" data-uk-lightbox title="胶囊印字">
+									<img src="static/temp/print_cap.png" alt="">
+								</a>
+
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+
+			</section>
+
+
+			<section id= "saveandtran" style="background:white; height:auto;width:100%" data-uk-scrollspy="{cls:'uk-animation-fade', delay:600}">
+				<div class="title_container" >
+					<div class="title_T" style="width:90%;">
+						<h2>胶囊的保存和使用</h2>
+						<span>Storage and Using of Capsules</span>
+					</div>
+				</div>
+
+				    <div class="save_container">
+						<div class="save_left">
+							<div class="save_using_intro">
+								<p class="eng">-存放胶囊的塑料袋需扎紧</p>
+								<p class="eng">-避免阳光直射, 远离热源和水源</p>
+								<p class="eng">-胶囊应存放在温度10°C-25°C, 相对湿度35% - 65%的室内</p>
+								<p class="eng">-胶囊箱与墙和地面保持一定距离, 以便利于空气流通保持干燥</p>
+								<p class="eng">-如果仓库与胶囊充填的机房温湿度相差较大, 则应将胶囊放在与填充条件相近的地方约半天后开箱使用</p>
+								<p class="eng">-轻舀、轻放胶囊，防止造成胶囊瘪壳、单节和锁合等因胶囊处置不当造成的填充缺陷</p>
+								<p class="chinese">-请勿使用经手触摸过的胶囊</p>
+							</div>
+						</div>
+
+						<div class="save_right">
+							<div class="save_using_intro_right">
+
+								<p>-Tighten up the plastic bags with capsules inside</p>
+								<p>-Avoid direct sunshine, keep away from heat generation and water sources</p>
+								<p>-Capsules should be stored in the room with the temperature between 10°C and 25°C, and the relative humidity of 35%~65%</p>
+								<p>-Capsule cartons should be kept away from walls and a certain distance from the floor to avoid moisture</p>
+								<p>-Capsule cartons should be stored in the place where there is the similar condition with filling room at least half-day before they can be open for filling, in case there are large differences of temperature and humidity between warehouse and filling room</p>
+								<p>-Scoop out and put down capsules gently to prevent defects of mashes, loose pieces and snap-fit closed etc. to be caused by the improper handling of the capsules</p>
+
+								<p>-Do not use capsules which are touched by hands</p>
+							</div>
+
+
+						</div>
+
+					</div>
+
+			</section>
 			<!--footer-->
 			<footer class="footerWrap">
 				<div class="footer__copyright">

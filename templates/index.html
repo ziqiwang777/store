@@ -43,14 +43,43 @@
 			<!--header-->
 			<div id="showRight"></div>
 			<div class="header">
-				<a href="index.html" class="logo"><img src="/static/img/logo.png"></a>
+				<a href="/index" class="logo"><img src="/static/img/logo.png"></a>
 				<ul>
 					<li><a href="/index">首页 </a></li>
 					<li><a href="/company_introduction">公司介绍</a></li>
-					<li><a href="/product_introduction">产品介绍</a></li>
-					<li><a href="/quality">品质监管</a></li>
-					<li><a href="/production_process">生产流程</a></li>
+					<li><a href="/product_introduction">产品服务</a></li>
+					<li>
+						<div class="drop_menu" style="width:107px;height:60px">
+							<div class="hover-btn"><a href="/product_introduction">生产与监管</a></div>
+							<div class="drop-content">
+								<a href="/quality">品质监管</a>
+								<a href="/production_process">生产流程</a>
+							</div>
+						</div>
+					</li>
+
+					<li class = "phone_nav"><a href="/quality">品质监管</a></li>
+					<li class = "phone_nav"><a href="/production_process">生产流程</a></li>
+
+
+
+
 					<li><a href="/contact_US">联系我们</a></li>
+					<li>
+						<div class="drop_menu" style="width:107px;height:60px">
+							<div class="hover-btn"><a href="#">LANGUAGE</a></div>
+							<div class="drop-content">
+								<a href="/eng_page">ENGLISH</a>
+								<a href="/index">中文</a>
+							</div>
+						</div>
+
+					</li>
+
+
+
+
+					</li>
 				</ul>
 				<a href="javascript:;" class="menu"></a>
 			</div>
@@ -58,10 +87,16 @@
 				<ul>
 					<li><a href="/index">首页 </a></li>
 					<li><a href="/company_introduction">公司介绍</a></li>
-					<li><a href="/product_introduction">产品介绍</a></li>
-					<li><a href="/quality">品质监管</a></li>
-					<li><a href="/production_process">生产流程</a></li>
+					<li><a href="/product_introduction">产品服务</a></li>
+					<li class="desk_nav"><a href="/production_process">生产与监管</a></li>
+
+					<li class = "phone_nav"><a href="/quality">品质监管</a></li>
+					<li class = "phone_nav"><a href="/production_process">生产流程</a></li>
+
+
 					<li><a href="/contact_US">联系我们</a></li>
+					<li><a href="/eng_page">ENGLISH</a></li>
+
 				</ul>
 			</div>
 			<!--banner-->
@@ -117,7 +152,6 @@
 
 				<div id="carousel">
 					<img src="/static/img/21.jpg" data-url="product_detail2">
-
 					<img src="/static/img/11.jpg" data-url="product_detail1">
 					<img src="/static/img/31.jpg" data-url="product_detail3">
 					<img src="/static/img/41.jpg" data-url="product_detail4">
@@ -135,10 +169,10 @@
 
 				<div class="uk-slidenav-position" data-uk-slideshow = "{animation:'scroll'}">
 		            <ul class="uk-slideshow">
-		                <li><img src="/static/img/21.jpg"></li>
-		                <li><img src="/static/img/11.jpg"></li>
-		                <li><img src="/static/img/31.jpg"></li>
-		                <li><img src="/static/img/41.jpg"></li>
+		                <li><a href="/product_detail2"><img src="/static/img/21.jpg"></a></li>
+						<li><a href="/product_detail1"><img src="/static/img/11.jpg"></a></li>
+						<li><a href="/product_detail3"><img src="/static/img/31.jpg"></a></li>
+						<li><a href="/product_detail4"><img src="/static/img/41.jpg"></a></li>
 		            </ul>
 		            <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
 		            <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>

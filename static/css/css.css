@@ -1,13 +1,13 @@
 @charset "utf-8";
-body, html {
+/* body, html {
 	padding: 0px;
 	margin: 0px;
 	overflow-x: hidden;
 	/*font-family: 'ITC Franklin Gothic LT W01BkCn';*/
 	font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
-	letter-spacing: 1px;
+	/* letter-spacing: 1px; */
 	font-size: 14px;
-}
+} */
 @font-face {
 	font-family: 'Thin';   /*字体名称*/
 	src: url('../fonts/museosansrounded700.woff');
@@ -15,10 +15,10 @@ body, html {
 /*字体源文件*/
 
 p, h2, h3, h4 { padding: 0px; margin: 0px }
-body {
+/* body {
 	overflow: hidden;
 	color: #666;
-}
+} */
 ul {
 	padding: 0px;
 	margin: 0px;
@@ -36,14 +36,14 @@ img {
 .clear {
 	clear: both;
 }
-::-webkit-scrollbar-track-piece { width: 10px; background-color: #000; }
+/* ::-webkit-scrollbar-track-piece { width: 10px; background-color: #000; }
 ::-webkit-scrollbar { width: 8px; height: 6px }
 ::-webkit-scrollbar-thumb { height: 50px; background-color: #005192; }
 ::-webkit-scrollbar-thumb:hover { background: #005192; }
 ::selection {
 	background: #005192;
 	color: #fff;
-}
+} */
 button, input { outline: none; }
 /**********导航**********/
 .logo { width: 80px; margin-top: 0px; float: left; }

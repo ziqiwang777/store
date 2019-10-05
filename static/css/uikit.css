@@ -1864,12 +1864,12 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-subnav-line > :before {
   content: "";
   display: inline-block;
-  height: 10px;
+  height: 25px;
   vertical-align: middle;
 }
 .uk-subnav-line > :nth-child(n+2):before {
   margin-right: 10px;
-  border-left: 1px solid #dddddd;
+  border-left: 2px solid #15466a;
 }
 /* Modifier: 'subnav-pill'
  ========================================================================== */

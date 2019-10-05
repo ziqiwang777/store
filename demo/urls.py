@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from . import test,index, quality, company_introduction, contact_US, news_information, product_introduction, production_process
+from . import test,index,index_eng, quality, company_introduction, contact_US, news_information, product_introduction, production_process
 from . import product_detail1, product_detail2, product_detail3, product_detail4
 from django.contrib import admin
 
@@ -21,5 +21,22 @@ urlpatterns = [
     url(r'product_detail1', product_detail1.product_detail1),
     url(r'product_detail2', product_detail2.product_detail2),
     url(r'product_detail3', product_detail3.product_detail3),
-    url(r'product_detail4', product_detail4.product_detail4)
+    url(r'product_detail4', product_detail4.product_detail4),
+
+
+# ENGLISH
+    url(r'eng_page', index_eng.index_eng),
+    url(r'eng_qlti', quality.quality_eng),
+    url(r'eng_ss', contact_US.submitsuccess_eng),
+    #
+    url(r'eng_aboutus', company_introduction.company_introduction_eng),
+    url(r'eng_cs', contact_US.contact_US_eng),
+    url(r'eng_pi', product_introduction.product_introduction_eng),
+    url(r'eng_pp', production_process.production_process_eng),
+    url(r'eng_pd1', product_detail1.eng_product_detail1),
+    url(r'eng_pd2', product_detail2.eng_product_detail2),
+    url(r'eng_pd3', product_detail3.eng_product_detail3),
+    url(r'eng_pd4', product_detail4.eng_product_detail4),
+
+
 ]
