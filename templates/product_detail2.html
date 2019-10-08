@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 	<head>
@@ -7,23 +9,25 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<title>宏辉胶丸</title>
 		<!-- <link rel="stylesheet" href="http://www.hgcapsule.com/css/font-awesome.css"/> -->
-		<link rel="stylesheet" href="/static/css/bootstrap.css" />
-		<link rel="stylesheet" href="/static/css/css.css" />
-		<link rel="stylesheet" href="/static/css/product_lists.css" />
-		<link rel="stylesheet" href="/static/css/default.css" />
-		<link rel="stylesheet" href="/static/css/otherstyle.css" />
+		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/css.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/default.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/product_lists.css' %}" />
+
+		<link rel="stylesheet" href="{% static 'css/otherstyle.css' %}" />
 
 
 		<!-- <link rel="stylesheet" href="/static/css/swiper.min.css" /> -->
-		<link rel="stylesheet" href="/static/css/freestyle.css" />
-		<link rel="stylesheet" href="static/css/uikit.css" />
-		<link rel="stylesheet" href="/static/css/dotnav.css" />
+		<link rel="stylesheet" href="{% static 'css/freestyle.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/uikit.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/dotnav.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/b_style.css' %}" />
 
-		<link rel="stylesheet" href="/static/css/b_style.css" />
-		<script type="text/javascript" src="/static/js/jQuery.js"></script>
-		<script type="text/javascript" src="/static/js/jquery.SuperSlide.2.1.1.js" ></script>
-		<script type="text/javascript" src="/static/js/swiper.min.js" ></script>
-		<script type="text/javascript" src="/static/js/style.js"></script>
+
+		<script type="text/javascript" src="{% static 'js/jQuery.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.SuperSlide.2.1.1.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/style.js' %}"></script>
 		<script src="//cdn.bootcss.com/uikit/2.25.0/js/uikit.js"></script>
 
 	</head>
@@ -33,15 +37,14 @@
 					<div class="top">
 						<p>欢迎访问宏辉胶丸官方网站！</p>
 						<div class="top_R">
-							<a href="#"><img src="/static/img/top_tell.png">0575-86176888</a><span>|</span>
-							<a href="#"><img src="/static/img/top_mell.png">honghui158@163.com</a>
-						</div>
+							<a href="#"><img src="{% static 'img/top_tell.png' %}">0575-86176888</a><span>|</span>
+							<a href="#"><img src="{% static 'img/top_mell.png' %}">honghui158@163.com</a>						</div>
 					</div>
 				</div>
 				<!--header-->
 				<div id="showRight"></div>
 				<div class="header">
-    				<a href="index.html" class="logo"><img src="/static/img/logo.png"></a>
+					<a href="/index" class="logo"><img src="{% static 'img/logo.png' %}"></a>
     				<ul>
     					<li><a href="/index">首页 </a></li>
     					<li><a href="/company_introduction">公司介绍</a></li>
@@ -95,7 +98,7 @@
     			</div>
 			<!-- 过渡栏 -->
 			<div class="banner">
-				<a href="#"><img style="width:100%" src="/static/temp/company_banner1.jpg"></a>
+				<a href="#"><img style="width:100%" src="{% static 'temp/company_banner1.jpg' %}"></a>
 				<div class="case_bawz">
 					<!-- <h2>企业宗旨</h2>
 					<p>ing...</p> -->
@@ -114,7 +117,7 @@
 										<div class="col-sm-6">
 											<div class="pro_inner_left allLeft" style="left: 0px; opacity: 1;">
 												<div class="pro_in_img">
-													<img src="/static/img/22.jpg" style="margin-bottom:5%">
+													<img src="{% static 'img/22.jpg' %}" style="margin-bottom:5%">
 												</div>
 
 											</div>

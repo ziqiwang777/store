@@ -2,7 +2,8 @@ from django.conf.urls import url
 from . import test,index,index_eng, quality, company_introduction, contact_US, news_information, product_introduction, production_process
 from . import product_detail1, product_detail2, product_detail3, product_detail4
 from django.contrib import admin
-
+from django.views import static
+from django.conf import settings
 
 urlpatterns = [
     url(r'admin_honghui/', admin.site.urls),
@@ -37,6 +38,8 @@ urlpatterns = [
     url(r'eng_pd2', product_detail2.eng_product_detail2),
     url(r'eng_pd3', product_detail3.eng_product_detail3),
     url(r'eng_pd4', product_detail4.eng_product_detail4),
+
+    # url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATIC_ROOT }, name='static'),
 
 
 ]

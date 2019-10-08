@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 	<head>
@@ -6,24 +8,20 @@
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<title>Honghui Capsule</title>
-		<!-- <link rel="stylesheet" href="http://www.hgcapsule.com/css/font-awesome.css"/>
-		<link rel="stylesheet" href="/static/css/bootstrap.css" />
-		<link rel="stylesheet" href="/static/css/css.css" />
-		<link rel="stylesheet" href="/static/css/default.css" />
-		<link rel="stylesheet" href="/static/css/swiper.min.css" />
-		<link rel="stylesheet" href="/static/css/freestyle.css" />
-		<link rel="stylesheet" href="/static/css/b_style.css" /> -->
-		<link rel="stylesheet" href="/static/css/default.css" />
-		<link rel="stylesheet" href="/static/css/swiper.min.css" />
-		<link rel="stylesheet" href="/static/css/freestyle.css" />
-		<link rel="stylesheet" href="/static/css/b_style.css" />
-		<link rel="stylesheet" href="static/css/uikit.css" />
-		<link rel="stylesheet" href="/static/css/otherstyle.css" />
 
-		<script type="text/javascript" src="/static/js/jQuery.js"></script>
-		<script type="text/javascript" src="/static/js/jquery.SuperSlide.2.1.1.js" ></script>
-		<script type="text/javascript" src="/static/js/swiper.min.js" ></script>
-		<script type="text/javascript" src="/static/js/style.js"></script>
+
+
+		<link rel="stylesheet" href="{% static 'css/default.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/swiper.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/freestyle.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/b_style.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/uikit.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/otherstyle.css' %}" />
+
+		<script type="text/javascript" src="{% static 'js/jQuery.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.SuperSlide.2.1.1.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/style.js' %}"></script>
 		<script src="//cdn.bootcss.com/uikit/2.25.0/js/uikit.js"></script>
 
 	</head>
@@ -32,15 +30,16 @@
                 <div class="top">
     				<p>Welcome to visit Honghui Capsule!</p>
     				<div class="top_R">
-    					<a href="#"><img src="/static/img/top_tell.png">+86(0)57586176888</a><span>|</span>
-    					<a href="#"><img src="/static/img/top_mell.png">honghui158@163.com</a>
+						<a href="#"><img src="{% static 'img/top_tell.png' %}">0575-86176888</a><span>|</span>
+						<a href="#"><img src="{% static 'img/top_mell.png' %}">honghui158@163.com</a>
+
     				</div>
     			</div>
 				</div>
 				<!--header-->
 				<div id="showRight"></div>
 				<div class="header">
-    				<a href="/eng_page" class="logo"><img src="/static/img/logo.png"></a>
+					<a href="/eng_page" class="logo"><img src="{% static 'img/logo.png' %}"></a>
     				<ul>
     					<li><a href="/eng_page">Home</a></li>
     					<li><a href="/eng_aboutus">About Us</a></li>
@@ -91,7 +90,7 @@
     				</ul>
     			</div>
 			<div class="banner">
-				<a href="#"><img style="width:100%" src="/static/temp/production_banner2.jpg"></a>
+				<a href="#"><img style="width:100%" src="{% static 'temp/production_banner2.jpg' %}"></a>
 				<div class="case_bawz">
 					<!-- <h2>企业宗旨</h2>
 					<p>ing...</p> -->
@@ -108,23 +107,23 @@
 
 				<div class="uk-grid" style = "padding:5%; padding-bottom:4%;padding-top:2%">
 					<div class="uk-width-large-1-2" >
-						<img class="quality" src="/static/img/quality1.png" alt="">
+						<img class="quality" src="{% static 'img/quality1.png' %}" alt="">
 
 					</div>
 
 					<div class="uk-width-large-1-2" >
-						<img class="quality" src="/static/img/quality2.png" alt="">
+						<img class="quality" src="{% static 'img/quality2.png' %}" alt="">
 
 
 					</div>
 
 					<div class="uk-width-large-1-2" >
-						<img class="quality" src="/static/img/quality3.png" alt="">
+						<img class="quality" src="{% static 'img/quality3.png' %}" alt="">
 
 					</div>
 
 					<div class="uk-width-large-1-2" >
-						<img class="quality" src="/static/img/quality4.png" alt="">
+						<img class="quality" src="{% static 'img/quality4.png' %}" alt="">
 
 
 					</div>

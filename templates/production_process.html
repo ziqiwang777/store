@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 	<head>
@@ -6,24 +8,18 @@
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<title>宏辉胶丸</title>
-		<!-- <link rel="stylesheet" href="http://www.hgcapsule.com/css/font-awesome.css"/>
-		<link rel="stylesheet" href="/static/css/bootstrap.css" />
-		<link rel="stylesheet" href="/static/css/css.css" />
-		<link rel="stylesheet" href="/static/css/default.css" />
-		<link rel="stylesheet" href="/static/css/swiper.min.css" />
-		<link rel="stylesheet" href="/static/css/freestyle.css" />
-		<link rel="stylesheet" href="/static/css/b_style.css" /> -->
-		<link rel="stylesheet" href="/static/css/default.css" />
-		<link rel="stylesheet" href="/static/css/swiper.min.css" />
-		<link rel="stylesheet" href="/static/css/freestyle.css" />
-		<link rel="stylesheet" href="/static/css/b_style.css" />
-		<link rel="stylesheet" href="static/css/uikit.css" />
-		<link rel="stylesheet" href="/static/css/otherstyle.css" />
 
-		<script type="text/javascript" src="/static/js/jQuery.js"></script>
-		<script type="text/javascript" src="/static/js/jquery.SuperSlide.2.1.1.js" ></script>
-		<script type="text/javascript" src="/static/js/swiper.min.js" ></script>
-		<script type="text/javascript" src="/static/js/style.js"></script>
+		<link rel="stylesheet" href="{% static 'css/default.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/swiper.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/freestyle.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/b_style.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/uikit.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/otherstyle.css' %}" />
+
+		<script type="text/javascript" src="{% static 'js/jQuery.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.SuperSlide.2.1.1.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/style.js' %}"></script>
 		<script src="//cdn.bootcss.com/uikit/2.25.0/js/uikit.js"></script>
 
 	</head>
@@ -32,15 +28,15 @@
 					<div class="top">
 						<p>欢迎访问浙江宏辉胶丸有限公司官方网站！</p>
 						<div class="top_R">
-							<a href="#"><img src="/static/img/top_tell.png">0575-86176888</a><span>|</span>
-							<a href="#"><img src="/static/img/top_mell.png">honghui158@163.com</a>
+							<a href="#"><img src="{% static 'img/top_tell.png' %}">0575-86176888</a><span>|</span>
+							<a href="#"><img src="{% static 'img/top_mell.png' %}">honghui158@163.com</a>
 						</div>
 					</div>
 				</div>
 				<!--header-->
 				<div id="showRight"></div>
 				<div class="header">
-    				<a href="index.html" class="logo"><img src="/static/img/logo.png"></a>
+					<a href="/index" class="logo"><img src="{% static 'img/logo.png' %}"></a>
     				<ul>
     					<li><a href="/index">首页 </a></li>
     					<li><a href="/company_introduction">公司介绍</a></li>
@@ -98,7 +94,7 @@
     			</div>
 			<!--banner-->
 			<div class="banner">
-				<a href="#"><img style="width:100%" src="static/temp/production_banner.jpg"></a>
+				<a href="#"><img style="width:100%" src="{% static 'temp/production_banner.jpg' %}"></a>
 				<!-- <div class="case_bawz">
 					<h2>创新实用高效的软件是我们的驱动力，停止创新就是停止生命！</h2>
 					<p>Innovation is our driving force, practical and efficient software stop innovation is life!</p>
@@ -118,7 +114,7 @@
 					<li>
 						<div class="banner" align="center" style="padding:30px 0">
 
-							<img class = "produce_process" src="static/img/production_process.jpg">
+							<img class = "produce_process" src="{% static 'img/production_process.jpg' %}">
 						</div>							<!-- <span>查看详情</span> -->
 					</li>
 

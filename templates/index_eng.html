@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <div display:None></div>
 <html lang="zh-CN">
 	<head>
@@ -7,27 +9,35 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Honghui Capsule</title>
-		<link rel="stylesheet" href="/static/css/default.css" />
-		<link rel="stylesheet" href="/static/css/freestyle.css" />
-		<link rel="stylesheet" type="text/css" href="/static/css/style_gundong.css" />
-		<link rel="stylesheet" href="/static/css/b_style.css" />
-		<link rel="stylesheet" type="text/css" href="/static/css/specialstyle.css">
-		<link rel="stylesheet" href="static/css/uikit.css" />
-		<link rel="stylesheet" href="static/css/otherstyle.css" />
-        <link rel="stylesheet" href="static/css/slider.css" />
-        <link rel="stylesheet" href="static/css/slideshow.css" />
-        <link rel="stylesheet" href="static/css/dotnav.css" />
-        <link rel="stylesheet" href="static/css/slidenav.css" />
+		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/default.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/swiper.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/product_lists.css' %}" />
 
-		<script type="text/javascript" src="/static/js/jquery-1.3.1.js"></script>
-		<script type="text/javascript" src="/static/js/jQuery.js"></script>
-		<script type="text/javascript" src="/static/js/jquery.SuperSlide.2.1.1.js" ></script>
-		<script type="text/javascript" src="/static/js/style.js"></script>
 
-		<script src="/static/js/slider_desktop.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="{% static 'css/freestyle.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/b_style.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/uikit.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/slideshow.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/slidenav.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/dotnav.css' %}" />
+
+
+		<link rel="stylesheet" href="{% static 'css/specialstyle.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/otherstyle.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/style_gundong.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/slider.css' %}" />
+
+		<script type="text/javascript" src="{% static 'js/jQuery.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.SuperSlide.2.1.1.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/style.js' %}"></script>
 		<script src="//cdn.bootcss.com/uikit/2.25.0/js/uikit.js"></script>
-		<script src="/static/js/slider.js" type="text/javascript" charset="utf-8"></script>
-        <script src="/static/js/slideshow.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="{% static 'js/lightbox.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/slider_desktop.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/slider.js' %}"></script>
+
+		<script type="text/javascript" src="{% static 'js/slideshow.js' %}"></script>
 
 	</head>
 	<body>
@@ -35,8 +45,8 @@
 			<div class="top">
 				<p>Welcome to visit Honghui Capsule!</p>
 				<div class="top_R">
-					<a href="#"><img src="/static/img/top_tell.png">+86(0)57586176888</a><span>|</span>
-					<a href="#"><img src="/static/img/top_mell.png">honghui158@163.com</a>
+					<a href="#"><img src="{% static 'img/top_tell.png' %}">+86(0)57586176888</a><span>|</span>
+					<a href="#"><img src="{% static 'img/top_mell.png' %}">honghui158@163.com</a>
 				</div>
 			</div>
 		</div>
@@ -101,7 +111,7 @@
 					<div class="bd">
 						<ul>
 							<li>
-								<img src="/static/temp/banner_en01.jpg" />
+								<img src="{% static 'temp/banner_en01.jpg' %}" />
 								<div class="wz">
 
 									<!-- <a href="product_introduction.html">
@@ -110,7 +120,7 @@
 								</div>
 							</li>
 							<li>
-								<img src="/static/temp/banner_en02.jpg" />
+								<img src="{% static 'temp/banner_en02.jpg' %}" />
 								<div class="wz">
 
 									<!-- <img src="/static/img/banner_line.jpg" class="img"> -->
@@ -122,7 +132,7 @@
 
 							</li>
 							<li>
-								<img src="/static/temp/banner_en03.jpg" />
+								<img src="{% static 'temp/banner_en03.jpg' %}" />
 								<div class="wz">
 
 
@@ -147,11 +157,11 @@
 			<div id="banner1" style="width: 100%;overflow:hidden;">
 
 				<div id="carousel">
-					<img src="/static/img/21_eng.png" data-url="eng_pd1">
+					<img src="{% static 'img/21_eng.png' %}" data-url="eng_pd1">
 
-					<img src="/static/img/11_eng.png" data-url="eng_pd2">
-					<img src="/static/img/31_eng.png" data-url="eng_pd3">
-					<img src="/static/img/41_eng.png" data-url="eng_pd4">
+					<img src="{% static 'img/11_eng.png' %}" data-url="eng_pd1">
+					<img src="{% static 'img/31_eng.png' %}" data-url="eng_pd1">
+					<img src="{% static 'img/41_eng.png' %}" data-url="eng_pd1">
 				</div>
 			</div>
 
@@ -167,10 +177,10 @@
 				<div class="uk-slidenav-position" data-uk-slideshow = "{animation:'scroll'}">
 		            <ul class="uk-slideshow">
 
-		                <li><a href="eng_pd2"><img src="/static/img/21_eng.png"></a></li>
-						<li><a href="eng_pd1"><img src="/static/img/11_eng.png"></a></li>
-						<li><a href="eng_pd3"><img src="/static/img/31_eng.png"></a></li>
-						<li><a href="eng_pd4"><img src="/static/img/41_eng.png"></a></li>
+		                <li><a href="eng_pd2"><img src="{% static 'img/21_eng.png' %}"></a></li>
+						<li><a href="eng_pd1"><img src="{% static 'img/11_eng.png' %}"></a></li>
+						<li><a href="eng_pd3"><img src="{% static 'img/31_eng.png' %}"></a></li>
+						<li><a href="eng_pd4"><img src="{% static 'img/41_eng.png' %}"></a></li>
 		            </ul>
 		            <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
 		            <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
@@ -188,7 +198,7 @@
 					</div>
 					<div class="abouts_con clearfix" id = "img_index">
 						<div class="aboutcon">
-							<div data-uk-scrollspy="{cls:'uk-animation-slide-bottom ',delay:600}"><a href="#" class="img"><img src="/static/img/index_back_11.jpg"></a></div>
+							<div data-uk-scrollspy="{cls:'uk-animation-slide-bottom ',delay:600}"><a href="#" class="img"><img src="{% static 'img/index_back_11.jpg' %}"></a></div>
 							<div data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay:700}" class="wz" id = "img_content">
 	 							<h3>Quality First and Integrity Foremost.</h3>
 								<p>Zhejiang Honghui Capsule Co., Ltd is a professional and comprehensive  Chinese manufacturer founded in 1995, with covering a total area of over 20000 square meters. The corporation specialises in producing gelatin capsules and vegetable capsules and its main products include size 00# - 4# gelatin hollow capsules, enteric coated hollow capsules, Hypromellose capsules and pullulan capsules. By now the annual capacity of production reaches 28 billion grains.</p>

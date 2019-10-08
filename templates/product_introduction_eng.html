@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 	<head>
@@ -7,24 +9,24 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Honghui Capsule</title>
-		<link rel="stylesheet" href="/static/css/default.css" />
-		<link rel="stylesheet" href="/static/css/freestyle.css" />
-		<link rel="stylesheet" type="text/css" href="/static/css/style_gundong.css" />
-		<link rel="stylesheet" href="/static/css/b_style.css" />
-		<link rel="stylesheet" type="text/css" href="/static/css/specialstyle.css">
-		<link rel="stylesheet" href="static/css/uikit.css" />
-		<link rel="stylesheet" href="static/css/otherstyle.css" />
-        <link rel="stylesheet" href="static/css/slider.css" />
-        <link rel="stylesheet" href="static/css/slideshow.css" />
-        <link rel="stylesheet" href="static/css/dotnav.css" />
-        <link rel="stylesheet" href="static/css/slidenav.css" />
+		<link rel="stylesheet" href="{% static 'css/default.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/freestyle.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/style_gundong.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/b_style.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/specialstyle.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/uikit.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/otherstyle.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/slider.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/slideshow.css' %}" />
+		<!-- <link rel="stylesheet" href="{% static 'css/dotnav.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/slidenav.css' %}" /> -->
+		<script type="text/javascript" src="{% static 'js/jQuery.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.SuperSlide.2.1.1.js' %}"></script>
 
-		<script type="text/javascript" src="/static/js/jquery-1.3.1.js"></script>
-		<script type="text/javascript" src="/static/js/jQuery.js"></script>
-		<script type="text/javascript" src="/static/js/jquery.SuperSlide.2.1.1.js" ></script>
-		<script type="text/javascript" src="/static/js/style.js"></script>
+		<script type="text/javascript" src="{% static 'js/style.js' %}"></script>
 
-		<script src="/static/js/slider_desktop.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- <script src="{% static 'js/slider_desktop.js' %}" type="text/javascript" charset="utf-8"></script> -->
 		<script src="//cdn.bootcss.com/uikit/2.25.0/js/uikit.js"></script>
 
 
@@ -34,8 +36,8 @@
 					<div class="top">
                         <p>Welcome to visit Honghui Capsule!</p>
 						<div class="top_R">
-							<a href="#"><img src="/static/img/top_tell.png">+86(0)57586176888</a><span>|</span>
-							<a href="#"><img src="/static/img/top_mell.png">honghui158@163.com</a>
+							<a href="#"><img src="{% static 'img/top_tell.png' %}">+86(0)57586176888</a><span>|</span>
+							<a href="#"><img src="{% static 'img/top_mell.png' %}">honghui158@163.com</a>
 						</div>
 					</div>
 				</div>
@@ -43,7 +45,7 @@
 				<div id="showRight"></div>
 
 				<div class="header">
-    				<a href="/eng_page" class="logo"><img src="/static/img/logo.png"></a>
+					<a href="/eng_page" class="logo"><img src="{% static 'img/logo.png' %}"></a>
     				<ul>
     					<li><a href="/eng_page">Home</a></li>
     					<li><a href="/eng_aboutus">About Us</a></li>
@@ -109,7 +111,7 @@
 
 
 			<div class="banner">
-				<a href="#"><img style="width:100%"src="/static/temp/company_banner1.jpg"></a>
+				<a href="#"><img style="width:100%"src="{% static 'temp/company_banner1.jpg' %}"></a>
 				<div class="case_bawz">
 
 				</div>
@@ -139,10 +141,10 @@
                         <a href="/eng_pd1">
 							<picture>
 
-								<source media="(min-width:960px)" srcset="/static/img/13_eng.png">
-								<source media="(max-width:960px)" srcset="/static/img/11_eng.png">
+								<source media="(min-width:960px)" srcset="{% static 'img/13_eng.png' %}">
+								<source media="(max-width:960px)" srcset="{% static 'img/11_eng.png' %}">
 
-								<img class="enlarge"  src="/static/img/13_eng.png">
+								<img class="enlarge"  src="{% static 'img/13_eng.png' %}">
 
 							</picture>
 
@@ -155,10 +157,10 @@
                         <a href="/eng_pd2">
 							<picture>
 
-								<source media="(min-width:960px)" srcset="/static/img/23_eng.png">
-								<source media="(max-width:960px)" srcset="/static/img/21_eng.png">
+								<source media="(min-width:960px)" srcset="{% static 'img/23_eng.png' %}">
+								<source media="(max-width:960px)" srcset="{% static 'img/21_eng.png' %}">
 
-								<img class="enlarge"  src="/static/img/23_eng.png">
+								<img class="enlarge"  src="{% static 'img/23_eng.png' %}">
 
 							</picture>
 
@@ -170,10 +172,10 @@
                         <a href="/eng_pd3">
 							<picture>
 
-								<source media="(min-width:960px)" srcset="/static/img/33_eng.png">
-								<source media="(max-width:960px)" srcset="/static/img/31_eng.png">
+								<source media="(min-width:960px)" srcset="{% static 'img/33_eng.png' %}">
+								<source media="(max-width:960px)" srcset="{% static 'img/31_eng.png' %}">
 
-								<img class="enlarge"  src="/static/img/33_eng.png">
+								<img class="enlarge"  src="{% static 'img/33_eng.png' %}">
 
 							</picture>
 
@@ -187,10 +189,10 @@
 						<a href="/eng_pd4">
 							<picture>
 
-								<source media="(min-width:960px)" srcset="/static/img/43_eng.png">
-								<source media="(max-width:960px)" srcset="/static/img/41_eng.png">
+								<source media="(min-width:960px)" srcset="{% static 'img/43_eng.png' %}">
+								<source media="(max-width:960px)" srcset="{% static 'img/41_eng.png' %}">
 
-								<img class="enlarge"  src="/static/img/43_eng.png">
+								<img class="enlarge"  src="{% static 'img/43_eng.png' %}">
 
 							</picture>
 						</a>
@@ -214,7 +216,7 @@
 				<div class="print_container">
 				    <div class="print_left">
 						<div class="tit_frame">
-							<img src="static/temp/print_tit.png" alt="">
+							<img src="{% static 'temp/print_tit.png' %}" alt="">
 						</div>
 					</div>
 
@@ -229,8 +231,8 @@
 							</p>
 
 							<div class="print_cap_frame">
-								<a href="static/temp/print_cap.png" data-uk-lightbox title="Capsule Printing Technology">
-									<img src="static/temp/print_cap.png" alt="">
+								<a href="{% static 'temp/print_cap.png' %}" data-uk-lightbox title="Capsule Printing Technology">
+									<img src="{% static 'temp/print_cap.png' %}" alt="">
 								</a>
 
 							</div>

@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 	<head>
@@ -7,23 +9,24 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<title>Honghui Capsule</title>
 
-        <link rel="stylesheet" href="/static/css/Animate.css" />
-		<link rel="stylesheet" href="/static/css/default.css" />
-		<link rel="stylesheet" href="/static/css/swiper.min.css" />
-		<link rel="stylesheet" href="/static/css/freestyle.css" />
-		<link rel="stylesheet" href="/static/css/b_style.css" />
-		<link rel="stylesheet" href="static/css/uikit.css" />
+		<link rel="stylesheet" href="{% static 'css/Animate.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/default.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/swiper.min.css' %}" />
 
-        <link rel="stylesheet" href="static/css/specialstyle.css" />
-		<link rel="stylesheet" href="static/css/otherstyle.css" />
 
-		<script type="text/javascript" src="/static/js/jQuery.js"></script>
-		<script type="text/javascript" src="/static/js/jquery.SuperSlide.2.1.1.js" ></script>
-		<script type="text/javascript" src="/static/js/swiper.min.js" ></script>
-		<script type="text/javascript" src="/static/js/style.js"></script>
+		<link rel="stylesheet" href="{% static 'css/freestyle.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/b_style.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/uikit.css' %}" />
 
+		<link rel="stylesheet" href="{% static 'css/specialstyle.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/otherstyle.css' %}" />
+
+		<script type="text/javascript" src="{% static 'js/jQuery.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.SuperSlide.2.1.1.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/style.js' %}"></script>
 		<script src="//cdn.bootcss.com/uikit/2.25.0/js/uikit.js"></script>
-		<script type="text/javascript" src="/static/js/lightbox.js"></script>
+		<script type="text/javascript" src="{% static 'js/lightbox.js' %}"></script>
 
 
 	</head>
@@ -32,15 +35,15 @@
 			<div class="top">
 				<p>Welcome to visit Honghui Capsule!</p>
 				<div class="top_R">
-					<a href="#"><img src="/static/img/top_tell.png">+86(0)57586176888</a><span>|</span>
-					<a href="#"><img src="/static/img/top_mell.png">honghui158@163.com</a>
+					<a href="#"><img src="{% static 'img/top_tell.png' %}">+86(0)57586176888</a><span>|</span>
+					<a href="#"><img src="{% static 'img/top_mell.png' %}">honghui158@163.com</a>
 				</div>
 			</div>
 		</div>
 			<!--header-->
 			<div id="showRight"></div>
 			<div class="header">
-				<a href="/eng_page" class="logo"><img src="/static/img/logo.png"></a>
+				<a href="/eng_page" class="logo"><img src="{% static 'img/logo.png' %}"></a>
 				<ul>
 					<li><a href="/eng_page">Home</a></li>
 					<li><a href="/eng_aboutus">About Us</a></li>
@@ -94,7 +97,7 @@
 			</div>
 
 			<div class="banner">
-				<a href="#"><img style="width : 100%" src="/static/temp/company_banner2.jpg"></a>
+				<a href="#"><img style="width : 100%" src="{% static 'temp/company_banner2.jpg' %}"></a>
 				<div class="case_bawz">
 				</div>
 			</div>
@@ -126,11 +129,11 @@
                                 </p>
 
                             <div class="phone_img">
-								<img style="box-shadow:0 0 7px rgba(0,0,0,0.5)"src="/static/img/company_dev.jpg">
+								<img style="box-shadow:0 0 7px rgba(0,0,0,0.5)"src="{% static 'img/company_dev.jpg' %}">
 							</div>
 						</div>
 						<div class="company_R">
-							<img style="box-shadow:0 0 7px rgba(0,0,0,0.5)"src="/static/img/company_dev.jpg">
+							<img style="box-shadow:0 0 7px rgba(0,0,0,0.5)"src="{% static 'img/company_dev.jpg' %}">
 						</div>
 					</dd>
 
@@ -140,7 +143,7 @@
 					<dd class="clearfix second"  data-uk-scrollspy="{cls:'uk-animation-slide-bottom',delay:300}">
 						<div class="company_L fr">
 
-							<a href="/static/img/development2.jpg" data-uk-lightbox title="宏辉胶丸发展历程">
+							<a href="{% static 'img/development2.jpg' %}" data-uk-lightbox title="宏辉胶丸发展历程">
 								<span style="font-size:24px;color:#013366;float:right;padding-right:5%">
 
                                     <div class="float_title">
@@ -151,18 +154,18 @@
 
 								</a>
 
-							<a href="/static/img/development2.jpg" data-uk-lightbox title="宏辉胶丸发展历程">
-								<img class="test" style="left:100px;width:90%;padding-left:5%;padding-top:5%" src="/static/img/development2.jpg">
+							<a href="{% static 'img/development2.jpg' %}" data-uk-lightbox title="宏辉胶丸发展历程">
+								<img class="test" style="left:100px;width:90%;padding-left:5%;padding-top:5%" src="{% static 'img/development2.jpg' %}">
 
 
 								</a>
 
 							<div class="phone_img">
-								<img style="box-shadow:0 0 7px rgba(0,0,0,0.5)"src="/static/img/company_01.jpg">
+								<img style="box-shadow:0 0 7px rgba(0,0,0,0.5)"src="{% static 'img/company_01.jpg' %}">
 							</div>
 						</div>
 						<div class="company_R company_Ra">
-							<img style="box-shadow:0 0 7px rgba(0,0,0,0.5)"src="/static/img/company_01.jpg">
+							<img style="box-shadow:0 0 7px rgba(0,0,0,0.5)"src="{% static 'img/company_01.jpg' %}">
 
 						</div>
 					</dd>
@@ -187,7 +190,7 @@
 								<div class="uk-grid">
 				                    <div class="uk-width-large-1-3 uk-width-medium-1-2" >
 										<div class="honor_item">
-											<a href="/static/img/honor1.jpg" data-uk-lightbox title="High-tech Enterprise in 2018">
+											<a href="{% static 'img/honor1.jpg' %}" data-uk-lightbox title="High-tech Enterprise in 2018">
 												<div class="honor_text_eng">High-tech Enterprise in 2018
 
 												</div>
@@ -199,7 +202,7 @@
 
 										<div class="honor_item">
 
-											<a href="/static/img/honor3.jpg" data-uk-lightbox title="Tax Payment Exceeded Ten Million in 2016">
+											<a href="{% static 'img/honor3.jpg' %}" data-uk-lightbox title="Tax Payment Exceeded Ten Million in 2016">
 												<div class="honor_text_eng">Tax Payment Exceeded Ten Million in 2016
 
 												</div>
@@ -210,7 +213,7 @@
 										</div>
 
 										<div class="honor_item">
-											<a href="/static/img/honor7.jpg" data-uk-lightbox title="Work Safety Standardisation Certificate (Level 3)">
+											<a href="{% static 'img/honor7.jpg' %}" data-uk-lightbox title="Work Safety Standardisation Certificate (Level 3)">
 												<div class="honor_text_eng">Work Safety Standardisation Certificate (Level 3)
 
 												</div>
@@ -222,7 +225,7 @@
 										</div>
 
 										<div class="honor_item">
-											<a href="/static/img/honor10.jpg" data-uk-lightbox title="Certificate of Halal Product">
+											<a href="{% static 'img/honor10.jpg' %}" data-uk-lightbox title="Certificate of Halal Product">
 												<div class="honor_text_eng">Certificate of Halal Product
 
 												</div>
@@ -235,7 +238,7 @@
 
 									<div class="uk-width-large-1-3 uk-width-medium-1-2" >
 										<div class="honor_item">
-											<a href="/static/img/honor2.jpg" data-uk-lightbox title="Tax Payment Exceeded Ten Million in 2017">
+											<a href="{% static 'img/honor2.jpg' %}" data-uk-lightbox title="Tax Payment Exceeded Ten Million in 2017">
 												<div class="honor_text_eng">Tax Payment Exceeded Ten Million in 2017
 
 												</div>
@@ -246,7 +249,7 @@
 										</div>
 
 										<div class="honor_item">
-											<a href="/static/img/honor5.jpg" data-uk-lightbox title="Tax Payment Exceeded Ten Million in 2015">
+											<a href="{% static 'img/honor5.jpg' %}" data-uk-lightbox title="Tax Payment Exceeded Ten Million in 2015">
 												<div class="honor_text_eng">Tax Payment Exceeded Ten Million in 2015
 
 												</div>
@@ -256,7 +259,7 @@
 										</div>
 
 										<div class="honor_item">
-											<a href="/static/img/honor8.jpg" data-uk-lightbox title="WIT ASSESSMENT ISO22000">
+											<a href="{% static 'img/honor8.jpg' %}" data-uk-lightbox title="WIT ASSESSMENT ISO22000">
 												<div class="honor_text_eng">WIT ASSESSMENT ISO22000
 
 												</div>
@@ -265,7 +268,7 @@
 
 										</div>
                                         <div class="honor_item">
-											<a href="/static/img/honor11.png" data-uk-lightbox title="Zhejiang Famous Trademark">
+											<a href="{% static 'img/honor11.png' %}" data-uk-lightbox title="Zhejiang Famous Trademark">
 												<div class="honor_text_eng">Zhejiang Famous Trademark
 
 												</div>
@@ -278,7 +281,7 @@
 
 									<div class="uk-width-large-1-3 uk-width-medium-1-2" >
 										<div class="honor_item">
-											<a href="/static/img/honor4.jpg" data-uk-lightbox title="Advanced Units of Scientific and Technological Innovation in 2016">
+											<a href="{% static 'img/honor4.jpg' %}" data-uk-lightbox title="Advanced Units of Scientific and Technological Innovation in 2016">
 												<div class="honor_text_eng">Advanced Units of Scientific and Technological Innovation in 2016
 
 												</div>
@@ -288,7 +291,7 @@
 										</div>
 
 										<div class="honor_item">
-											<a href="/static/img/honor6.jpg" data-uk-lightbox title="Tax Payment Exceeded Ten Million in 2014">
+											<a href="{% static 'img/honor6.jpg' %}" data-uk-lightbox title="Tax Payment Exceeded Ten Million in 2014">
 												<div class="honor_text_eng">Tax Payment Exceeded Ten Million in 2014
 
 												</div>
@@ -298,7 +301,7 @@
 										</div>
 
 										<div class="honor_item">
-											<a href="/static/img/honor9.jpg" data-uk-lightbox title="WIT ASSESSMENT ISO9000">
+											<a href="{% static 'img/honor9.jpg' %}" data-uk-lightbox title="WIT ASSESSMENT ISO9000">
 												<div class="honor_text_eng">WIT ASSESSMENT ISO9000
 
 												</div>
@@ -307,7 +310,7 @@
 
 										</div>
                                         <div class="honor_item">
-											<a href="/static/img/honor12.png" data-uk-lightbox title="Zhejiang Famous Brand Product">
+											<a href="{% static 'img/honor12.png' %}" data-uk-lightbox title="Zhejiang Famous Brand Product">
 												<div class="honor_text_eng">Zhejiang Famous Brand Product
 
 												</div>
@@ -322,13 +325,13 @@
 							</div>
 
 							<div class="phone_img">
-								<img style="box-shadow:0 0 7px rgba(0,0,0,0.5)"src="/static/img/honor.jpg">
+								<img style="box-shadow:0 0 7px rgba(0,0,0,0.5)"src="{% static 'img/honor.jpg' %}">
 							</div>
 						</div>
 
 
 						<div class="company_R">
-							<img style="box-shadow:0 0 7px rgba(0,0,0,0.5)"src="/static/img/honor.jpg">
+							<img style="box-shadow:0 0 7px rgba(0,0,0,0.5)"src="{% static 'img/honor1.jpg' %}">
 						</div>
 					</dd>
 					<dt class="second">
@@ -396,7 +399,7 @@
 
 						</div>
 						<div class="company_R company_Ra" style="display:block !important;">
-							<img style="box-shadow:0 0 7px rgba(0,0,0,0.5)"src="/static/img/culture.jpg">
+							<img style="box-shadow:0 0 7px rgba(0,0,0,0.5)"src="{% static 'img/culture.jpg' %}">
 						</div>
 					</dd>
 

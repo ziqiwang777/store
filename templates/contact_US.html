@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 	<head>
@@ -7,17 +9,17 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<title>宏辉胶丸</title>
 
-		<link rel="stylesheet" href="/static/css/default.css" />
-		<link rel="stylesheet" href="/static/css/swiper.min.css" />
-		<link rel="stylesheet" href="/static/css/freestyle.css" />
-		<link rel="stylesheet" href="/static/css/b_style.css" />
-		<link rel="stylesheet" href="static/css/uikit.css" />
-		<link rel="stylesheet" href="/static/css/otherstyle.css" />
+		<link rel="stylesheet" href="{% static 'css/default.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/swiper.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/freestyle.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/b_style.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/uikit.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/otherstyle.css' %}" />
 
-		<script type="text/javascript" src="/static/js/jQuery.js"></script>
-		<script type="text/javascript" src="/static/js/jquery.SuperSlide.2.1.1.js" ></script>
-		<script type="text/javascript" src="/static/js/swiper.min.js" ></script>
-		<script type="text/javascript" src="/static/js/style.js"></script>
+		<script type="text/javascript" src="{% static 'js/jQuery.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.SuperSlide.2.1.1.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/style.js' %}"></script>
 		<script src="//cdn.bootcss.com/uikit/2.25.0/js/uikit.js"></script>
 
 	</head>
@@ -26,15 +28,15 @@
 					<div class="top">
 						<p>欢迎访问浙江宏辉胶丸有限公司官方网站！</p>
 						<div class="top_R">
-							<a href="#"><img src="/static/img/top_tell.png">0575-86176888</a><span>|</span>
-							<a href="#"><img src="/static/img/top_mell.png">honghui158@163.com</a>
+							<a href="#"><img src="{% static 'img/top_tell.png' %}">0575-86176888</a><span>|</span>
+							<a href="#"><img src="{% static 'img/top_mell.png' %}">honghui158@163.com</a>
 						</div>
 					</div>
 				</div>
 				<!--header-->
 				<div id="showRight"></div>
 				<div class="header">
-    				<a href="index.html" class="logo"><img src="/static/img/logo.png"></a>
+					<a href="/index" class="logo"><img src="{% static 'img/logo.png' %}"></a>
     				<ul>
     					<li><a href="/index">首页 </a></li>
     					<li><a href="/company_introduction">公司介绍</a></li>
@@ -92,7 +94,7 @@
     			</div>
 			<!--banner-->
 			<div class="banner">
-				<a href="#"><img style = "width:100%" src="/static/temp/location2.jpg"></a>
+				<a href="#"><img style = "width:100%" src="{% static 'temp/location2.jpg' %}"></a>
 				<!-- <div class="case_bawz">
 
 				</div> -->
@@ -106,23 +108,23 @@
 				<div class="contact_header">
 					<div class="contact_header_left">
 						<div class="contact_header_item">
-							<img class = "contact_icon" src="static/img/icon_email.png"><h2>Email : honghui158@163.com</h2>
+							<img class = "contact_icon" src="{% static 'img/icon_email.png' %}"><h2>Email : honghui158@163.com</h2>
 						</div>
 						<div class="contact_header_item">
-							<img class = "contact_icon" src="static/img/icon_address.png"><h2>通讯地址 : <a class = "hover_undeline" href="https://www.amap.com/place/B023F02WQG">浙江省绍兴市新昌县大道东路788号 邮编:312500</a></h2>
+							<img class = "contact_icon" src="{% static 'img/icon_address.png' %}"><h2>通讯地址 : <a class = "hover_undeline" href="https://www.amap.com/place/B023F02WQG">浙江省绍兴市新昌县大道东路788号 邮编:312500</a></h2>
 
 						</div>
 						<div class="contact_header_item">
-							<img class = "contact_icon" src="static/img/icon_phone.png"><h2>联系电话 : +86 (0)575-86176888 ; +86 (0)575-86516228 ; +86 (0)575-86516788 ; +86 (0)575-86516668<h2/>
+							<img class = "contact_icon" src="{% static 'img/icon_phone.png' %}"><h2>联系电话 : +86 (0)575-86176888 ; +86 (0)575-86516228 ; +86 (0)575-86516788 ; +86 (0)575-86516668<h2/>
 						</div>
 
 						<div class="contact_header_item">
-							<img class = "contact_icon" src="static/img/fax.png"><h2>传真 : +86 (0)575-86176202</h2>
+							<img class = "contact_icon" src="{% static 'img/fax.png' %}"><h2>传真 : +86 (0)575-86176202</h2>
 
 						</div>
 					</div>
 					<div class="contact_header_right uk-width-large-1-3 uk-width-medium-1-3">
-						<img style="width:60%;height:60%"src="/static/img/QRcode.jpg">
+						<img style="width:60%;height:60%"src="{% static 'img/QRcode.jpg' %}">
 
 					</div>
 
