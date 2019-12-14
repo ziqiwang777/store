@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from . import test,index,index_eng, quality, company_introduction, contact_US, news_information, product_introduction, production_process
+from . import table,test,index,index_eng, quality, company_introduction, contact_US, news_information, product_introduction, production_process
 from . import product_detail1, product_detail2, product_detail3, product_detail4
 from django.contrib import admin
 from django.views import static
@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'product_detail3', product_detail3.product_detail3),
     url(r'product_detail4', product_detail4.product_detail4),
 
+    url(r'cap_standards', table.cap_standards),
 
 # ENGLISH
     url(r'eng_page', index_eng.index_eng),
@@ -38,6 +39,7 @@ urlpatterns = [
     url(r'eng_pd2', product_detail2.eng_product_detail2),
     url(r'eng_pd3', product_detail3.eng_product_detail3),
     url(r'eng_pd4', product_detail4.eng_product_detail4),
+    url(r'eng_capstandards', table.eng_cap_standards),
 
     # url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATIC_ROOT }, name='static'),
 

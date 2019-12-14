@@ -373,3 +373,12 @@ p.eng{
     flex-direction:  row ;
     justify-content:center;
 }
+
+
+.textcontant{
+    width:fit-content;
+    border-bottom: 3px solid #00000045!important;
+
+
+}
+

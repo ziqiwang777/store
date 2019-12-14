@@ -15,7 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-print(BASE_DIR)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -23,9 +23,9 @@ print(BASE_DIR)
 SECRET_KEY = 'xtbj7mddrj63gj(s*-shclyy-62d917sm#e0(watyx6^ny*4d1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['172.31.169.182','127.0.0.1']
+ALLOWED_HOSTS = ['www.honghui158.com','honghui158.com','47.97.166.147','127.0.0.1']
 
 
 # Application definition
@@ -101,6 +101,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#SESSION_COOKIE_SECURE=True
+#SESSION_COOKIE_HTTPONLY=True
+#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -122,10 +127,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
-# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, "static"),
+#]
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # # print(STATIC_ROOT)
 #
 # # print(STATICFILES_DIRS)

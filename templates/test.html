@@ -1,0 +1,180 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>宏辉胶丸</title>
+
+		<link rel="stylesheet" href="{% static 'css/default.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/swiper.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/freestyle.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/b_style.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/uikit.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/otherstyle.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/table.css' %}" />
+
+		<script type="text/javascript" src="{% static 'js/jQuery.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.SuperSlide.2.1.1.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/uikit.js' %}"></script>
+
+		<script type="text/javascript" src="{% static 'js/style.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/lightbox.js' %}"></script>
+		<style type="text/css">
+		       a.download:link {text-decoration:none;color:#15466a ;}
+		       a.download:hover {text-decoration:underline;color:red;font-style:italic;}
+		       a.download:active{text-decoration:none;color:yellow;}
+		       a.download:visited {text-decoration:none;color:green;}
+
+		</style>
+
+
+	</head>
+	<body>
+			<div class="topWrap clearfix">
+					<div class="top">
+						<p>欢迎访问浙江宏辉胶丸有限公司官方网站！</p>
+						<div class="top_R">
+							<a href="#"><img src="{% static 'img/top_tell.png' %}">0575-86176888</a><span>|</span>
+							<a href="#"><img src="{% static 'img/top_mell.png' %}">honghui158@163.com</a>
+
+						</div>
+					</div>
+				</div>
+				<!--header-->
+				<div id="showRight"></div>
+				<div class="header">
+					<a href="/index" class="logo"><img src="{% static 'img/logo.png' %}"></a>
+    				<ul>
+    					<li><a href="/index">首页 </a></li>
+    					<li><a href="/company_introduction">公司介绍</a></li>
+    					<li><a href="/product_introduction">产品服务</a></li>
+    					<li>
+    						<div class="drop_menu" style="width:107px;height:60px">
+    							<div class="hover-btn"><a href="/product_introduction">生产与监管</a></div>
+    							<div class="drop-content">
+    								<a href="/quality">品质监管</a>
+    								<a href="/production_process">生产流程</a>
+    							</div>
+    						</div>
+    					</li>
+						<li><a style="font-size: 15px;padding: 10%;line-height: 30px;" href="/test">胶囊检验和尺寸</a></li>
+
+
+                        <li class = "phone_nav"><a href="/quality">品质监管</a></li>
+                        <li class = "phone_nav"><a href="/production_process">生产流程</a></li>
+
+
+
+
+    					<li><a href="/contact_US">联系我们</a></li>
+                        <li>
+    						<div class="drop_menu" style="width:107px;height:60px">
+    							<div class="hover-btn"><a href="#">LANGUAGE</a></div>
+    							<div class="drop-content">
+    								<a href="/eng_page">ENGLISH</a>
+    								<a href="/index">中文</a>
+    							</div>
+    						</div>
+
+    					</li>
+
+
+
+
+    				</ul>
+    				<a href="javascript:;" class="menu"></a>
+    			</div>
+    			<div id="Nav">
+    				<ul>
+    					<li><a href="/index">首页 </a></li>
+    					<li><a href="/company_introduction">公司介绍</a></li>
+    					<li><a href="/product_introduction">产品服务</a></li>
+						<li><a href="/test">胶囊检验和尺寸</a></li>
+
+
+                        <li class = "phone_nav"><a href="/quality">品质监管</a></li>
+                        <li class = "phone_nav"><a href="/production_process">生产流程</a></li>
+
+
+    					<li><a href="/contact_US">联系我们</a></li>
+    					<li><a href="/eng_page">ENGLISH</a></li>
+
+    				</ul>
+    			</div>
+			<div class="banner">
+				<a href="#"><img style="width:100%" src="{% static 'temp/company_banner2.jpg' %}"></a>
+				<div class="case_bawz">
+					<!-- <h2>企业宗旨</h2>
+					<p>ing...</p> -->
+				</div>
+			</div>
+			<!--case_内容-->
+			<div class="case_introduction product_introduction">
+				<h2 class="tit_h">
+                    <div class = "float_title">
+                        胶囊检验和尺寸
+                    </div>
+					<ul class="uk-subnav uk-subnav-line second_nav_product">
+						<a href="#sizetable" data-uk-smooth-scroll ><div class="second_nav_title">胶囊规格尺寸表</div></a>
+						<a href="#download" data-uk-smooth-scroll ><div class="second_nav_title">相关下载</div></a>
+					</ul>
+				</h2>
+
+                <div style = "padding:7%; padding-bottom:4%;padding-top:2%">
+                    <div style = "width :100%">
+                        <img style = "width:100%"src="{% static 'img/cap_table1.png' %}">
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <section id="sizetable" style="background:#e0e1e1; height:auto;width:100%" data-uk-scrollspy="{cls:'uk-animation-fade', delay:600}">
+
+				<div style = "padding:7%; padding-bottom:4%;padding-top:4%">
+                    <div style = "width :100%">
+                        <img style = "width:100%"src="{% static 'img/cap_table3.png' %}">
+                    </div>
+
+                </div>
+
+
+
+
+            </section>
+
+			<section id = "download" style="background:white; height:auto;width:100%">
+				<div style = "padding:7%; padding-bottom:2%;padding-top:2%">
+					<div style = "width :100%;font-size: 16px;">
+						<a class="download" href="{% static 'table/胶囊理化指数.xlsx' %}" download> <u>胶囊理化指数表格下载链接</u></a>
+						<br>
+						<div style="height:10px">
+
+						</div>
+						<a class="download" style="padding-top:20px" href="{% static 'table/明胶空心胶囊规格尺寸表.xlsx' %}" download> <u>明胶空心胶囊规格尺寸表格下载链接</u></a>
+					</div>
+
+				</div>
+
+			</section>
+
+
+
+
+			<!--footer-->
+			<footer class="footerWrap">
+				<div class="footer__copyright">
+					<span>版权所有@ 2017 浙江宏辉胶丸有限公司</span>
+				</div>
+				<div class="footer__copyright">
+					<span>浙ICP备19047156号-1</span>
+				</div>
+			</footer>
+	</body>
+</html>

@@ -25,7 +25,7 @@
 		<script type="text/javascript" src="{% static 'js/jquery.SuperSlide.2.1.1.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/style.js' %}"></script>
-		<script src="//cdn.bootcss.com/uikit/2.25.0/js/uikit.js"></script>
+		<script type="text/javascript" src="{% static 'js/uikit.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/lightbox.js' %}"></script>
 
 
@@ -51,16 +51,17 @@
     					<li><a href="/product_introduction">产品服务</a></li>
     					<li>
     						<div class="drop_menu" style="width:107px;height:60px">
-    							<div class="hover-btn"><a href="/product_introduction">生产与监管</a></div>
+    							<div class="hover-btn"><a href="#">生产与监管</a></div>
     							<div class="drop-content">
     								<a href="/quality">品质监管</a>
     								<a href="/production_process">生产流程</a>
     							</div>
     						</div>
     					</li>
+						<li><a style="font-size: 18px;padding-top: 10%;padding-bottom: 10%;line-height: 30px;" href="/cap_standards">胶囊检验和尺寸</a></li>
 
                         <li class = "phone_nav"><a href="/quality">品质监管</a></li>
-                        <li class = "phone_nav"><a href="/production_process">生产流程</a></li>
+                        <li class = "phone_nav"><a href="#">生产流程</a></li>
 
 
 
@@ -90,6 +91,7 @@
 
                         <li class = "phone_nav"><a href="/quality">品质监管</a></li>
                         <li class = "phone_nav"><a href="/production_process">生产流程</a></li>
+						<li><a href="/cap_standards">胶囊检验和尺寸</a></li>
 
 
     					<li><a href="/contact_US">联系我们</a></li>
@@ -99,7 +101,9 @@
     			</div>
 
 			<div class="banner">
-				<a href="#"><img style="width : 100%" src="{% static 'temp/company_banner2.jpg' %}"></a>
+				<!-- <a href="#"><img style="width : 100%" src="{% static 'temp/company_banner2.jpg' %}"></a> -->
+				<a href="#"><img style="width : 100%" src="{% static 'temp/about_us1.png' %}"></a>
+
 				<div class="case_bawz">
 				</div>
 			</div>
@@ -230,6 +234,16 @@
 											</a>
 
 										</div>
+										<div class="honor_item">
+											<a href="{% static 'img/honor13.jpg' %}" data-uk-lightbox title="省级高新技术企业研究开发中心">
+												<div class="honor_text">省级高新技术企业研究开发中心
+
+												</div>
+
+											</a>
+
+										</div>
+
 
 									</div>
 
@@ -342,7 +356,7 @@
 							<div class="">
 								<p class="p1">
 									<p>
-										宏辉胶丸公司非常重视企业文化，公司的最大特点是非常重视员工的感受，努力营造平等、自由、交流的环境和氛围。公司的企业文化的建设表现在以下几个方面：
+										宏辉胶丸公司非常重视企业文化，公司的最大特点是非常重视员工的感受，努力营造平等、自由、交流的环境和氛围。公司的企业文化的建设表现在以下几个方面:
 									</p>
 									<p>                         </p>
 									<p style="margin: 5px">
@@ -350,7 +364,7 @@
 									</p>
 
 									<p>
-											&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp作为一家药用胶丸公司，我们经常组织各类培训和学习，以实现自我提高和完善。公司每年都会聘请专业培训机构对公司员工进行专题培训，内容包括团队合作精神培训和专业技能等。
+											&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp作为一家著名的药用胶囊公司，我们经常组织各类培训和学习，以实现自我提高和完善。公司每年都会聘请专业培训机构对公司员工进行专题培训，内容包括团队合作精神培训和专业技能等。同时，还不定期的邀请业界人士作演讲和培训以升华自己的能力。
 									</p>
 									<br>
 									<br>
@@ -359,7 +373,7 @@
 										<b>2、平等相处，鼓励创新</b>
 									</p>
 									<p>
-											&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp大家平等相处，公司鼓励大家勇于尝试，鼓励创意，鼓励冒险，允许员工失败。公司内部行政职位上基本只有两级；在这里有年轻、开放、有经验的领导；这里有各种专业的人才而且竟然都是不论什么学历、证书的……所有员工都有机会运用自己的特长，将其发挥在自己的工作岗位上，在工作中获得成就感和满足感。
+											&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp大家平等相处，公司鼓励大家勇于尝试，鼓励创意，鼓励冒险，允许员工失败。公司内部行政职位上基本只有两级，在这里有年轻、开放和有经验的领导。这里有各种专业的人才，而且不论什么学历，拥有什么证书，所有员工都有机会运用自己的特长，将其发挥在自己的工作岗位上，而保障他们在工作中获得成就感和满足感。
 
 									</p>
 									<br>
@@ -375,20 +389,12 @@
 									<br>
 									<br>
 
-									<p style="margin: 5px">
-										<b>4、经常组织各类社会活动</b>
-									</p>
-									<p>
-											&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp宏辉胶丸作为中国药用胶丸一家著名公司，经常组织各类社会活动，以活动的形式进行了交流。宏辉胶丸还不定期的邀请业界人士作演讲、培训。
 
-									</p>
-									<br>
-									<br>
 
 									<p style="margin: 5px">
-										<b>5、努力创造良好的工作环境</b>
+										<b>4、努力创造良好的工作环境</b>
 									</p>
-									<p>		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp为了保证员工的健康，改善公司员工的福利，公司在综合办公大楼附近配备了员工饭堂和宿舍，免除了员工每天在办公室吃盒饭的烦恼，也让住宿舍的员工免除了上班挤公共汽车的麻烦.
+									<p>		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp保证员工的健康，改善公司员工的福利。公司在综合办公大楼附近配备了员工饭堂和宿舍，免除了员工每天在办公室吃盒饭的烦恼，也让住宿舍的员工免除了上班挤公共汽车的麻烦。
 									</p>
 
 							</div>
@@ -408,8 +414,9 @@
 					<span>版权所有@ 2017 浙江宏辉胶丸有限公司</span>
 				</div>
 				<div class="footer__copyright">
-					<span>浙ICP备06014512号</span>
+					<span>浙ICP备19047156号-1</span>
 				</div>
 			</footer>
 	</body>
 </html>
+

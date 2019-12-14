@@ -19,8 +19,11 @@
 		<script type="text/javascript" src="{% static 'js/jQuery.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/jquery.SuperSlide.2.1.1.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/uikit.js' %}"></script>
+
 		<script type="text/javascript" src="{% static 'js/style.js' %}"></script>
-		<script src="//cdn.bootcss.com/uikit/2.25.0/js/uikit.js"></script>
+		<script type="text/javascript" src="{% static 'js/lightbox.js' %}"></script>
+
 
 	</head>
 	<body>
@@ -44,13 +47,14 @@
     					<li><a href="/product_introduction">产品服务</a></li>
     					<li>
     						<div class="drop_menu" style="width:107px;height:60px">
-    							<div class="hover-btn"><a href="/product_introduction">生产与监管</a></div>
+    							<div class="hover-btn"><a href="#">生产与监管</a></div>
     							<div class="drop-content">
     								<a href="/quality">品质监管</a>
     								<a href="/production_process">生产流程</a>
     							</div>
     						</div>
     					</li>
+						<li><a style="font-size: 18px;padding-top: 10%;padding-bottom: 10%;line-height: 30px;" href="/cap_standards">胶囊检验和尺寸</a></li>
 
                         <li class = "phone_nav"><a href="/quality">品质监管</a></li>
                         <li class = "phone_nav"><a href="/production_process">生产流程</a></li>
@@ -86,6 +90,7 @@
 
                         <li class = "phone_nav"><a href="/quality">品质监管</a></li>
                         <li class = "phone_nav"><a href="/production_process">生产流程</a></li>
+						<li><a href="/cap_standards">胶囊检验和尺寸</a></li>
 
 
     					<li><a href="/contact_US">联系我们</a></li>
@@ -94,7 +99,7 @@
     				</ul>
     			</div>
 			<div class="banner">
-				<a href="#"><img style="width:100%" src="{% static 'temp/production_banner2.jpg' %}"></a>
+				<a href="#"><img style="width:100%" src="{% static 'temp/about_us1.png' %}"></a>
 				<div class="case_bawz">
 					<!-- <h2>企业宗旨</h2>
 					<p>ing...</p> -->
@@ -102,32 +107,61 @@
 			</div>
 			<!--case_内容-->
 			<div class="case_introduction product_introduction">
-				<h2 class="tit_h">品质监管
-					<hr class = "stick" style="max-width: 6rem;">
+				<h2 class="tit_h" >
+					<div class="float_title">
+						 品质监管
+					</div>
 
 				</h2>
 
+
+
 				<div class="uk-grid" style = "padding:5%; padding-bottom:4%;padding-top:2%">
 					<div class="uk-width-large-1-2" >
-						<img class="quality" src="{% static 'img/quality1.png' %}" alt="">
+						<a href="{% static 'img/high_q1.jpg' %}" data-uk-lightbox title="严格检测">
+							<img class="quality" src="{% static 'img/q1.png' %}" alt="">
+
+						</a>
 
 					</div>
 
 					<div class="uk-width-large-1-2" >
-						<img class="quality" src="{% static 'img/quality2.png' %}" alt="">
+
+
+							<a href="{% static 'img/high_q2.jpg' %}" data-uk-lightbox title="烊胶间">
+								<img class="quality" src="{% static 'img/q2.png' %}" alt="">
+
+							</a>
+
+					</div>
+
+					<div class="uk-width-large-1-2" >
+
+						<a href="{% static 'img/high_q3.jpg' %}" data-uk-lightbox title="调色间">
+							<img class="quality" src="{% static 'img/q3.png' %}" alt="">
+						</a>
+
+					</div>
+
+					<div class="uk-width-large-1-2" >
+
+						<a href="{% static 'img/high_q4.jpg' %}" data-uk-lightbox title="生产间">
+							<img class="quality" src="{% static 'img/q4.png' %}" alt="">
+						</a>
 
 
 					</div>
 
 					<div class="uk-width-large-1-2" >
-						<img class="quality" src="{% static 'img/quality3.png' %}" alt="">
-
+						<a href="{% static 'img/high_q5.jpg' %}" data-uk-lightbox title="品质监管">
+							<img class="quality" src="{% static 'img/q5.png' %}" alt="">
+						</a>
 					</div>
 
 					<div class="uk-width-large-1-2" >
-						<img class="quality" src="{% static 'img/quality4.png' %}" alt="">
-
-
+						<a href="{% static 'img/high_q6.jpg' %}" data-uk-lightbox title="胶囊记录">
+							<img class="quality" src="{% static 'img/q6.png' %}" alt="">
+						</a>
 					</div>
 				</div>
             </div>
@@ -141,7 +175,7 @@
 					<span>版权所有@ 2017 浙江宏辉胶丸有限公司</span>
 				</div>
 				<div class="footer__copyright">
-					<span>浙ICP备06014512号</span>
+					<span>浙ICP备19047156号-1</span>
 				</div>
 			</footer>
 	</body>
